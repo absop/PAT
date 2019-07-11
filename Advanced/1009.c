@@ -1,37 +1,33 @@
 #include <stdio.h>
 
 struct _item {
-    int expo;
-    double coef;
-} A[10], B[10], C[100];
+    int e;
+    double c;
+} A[10], P[100];
 
-double V[2001];
+double C[2001];
 
 int main()
 {
-    int Ka, Kb, Kc = 0;
+    int Ka, Kb, e, Kc = 0;
+    double c;
 
     scanf("%d", &Ka);
     for (int i = 0; i < Ka; ++i)
-        scanf("%d %lf", &A[i].expo, &A[i].coef);
+        scanf("%d %lf", &A[i].e, &A[i].c);
 
     scanf("%d", &Kb);
     for (int i = 0; i < Kb; ++i) {
-        scanf("%d %lf", &B[i].expo, &B[i].coef);
-        for (int j = 0; j < Ka; ++j) {
-            int expo = B[i].expo + A[j].expo;
-            V[expo] += B[i].coef * A[j].coef;
-        }
+        scanf("%d %lf", &e, &c);
+        for (int j = 0; j < Ka; ++j)
+            C[e + A[j].e] += c * A[j].c;
     }
-    for (int k = 2000; k >= 0; --k)
-        if (V[k]) {
-            C[Kc].expo = k;
-            C[Kc].coef = V[k];
-            Kc++;
-        }
+    for (int e = 2000; e >= 0; --e)
+        if (C[e] != 0)
+            P[Kc++] = (struct _item) {e, C[e]};
 
     printf("%d", Kc);
     for (int i = 0; i < Kc; ++i)
-        printf(" %d %.1lf", C[i].expo, C[i].coef);
+        printf(" %d %.1lf", P[i].e, P[i].c);
     printf("\n");
 }

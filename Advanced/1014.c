@@ -47,7 +47,7 @@ int main()
                 et = vhead(i);
             }
         }
-        // printf("%d 排在第%d号窗口\n", idx, mw);
+        // printf("%d鍙烽【瀹㈡帓鍦ㄧ%d鍙风獥鍙n", idx, mw);
         dequeue(mw);
         begin[idx] = vtail(mw);
         done[idx] += vtail(mw);

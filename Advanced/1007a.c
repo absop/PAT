@@ -15,7 +15,7 @@ int main()
         scanf("%d", &current);
         if (i == 0)
             first = current;
-        if (tempSum == 0 && current > 0)
+        if (!tempSum)
             maymin = current;
 
         tempSum += current;

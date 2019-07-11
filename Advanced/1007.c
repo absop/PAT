@@ -1,39 +1,29 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
 
-
-int main()
+int main(void)
 {
     int K;
     scanf("%d", &K);
-    int mini, maxi, first, current, maymin;
-    int maxSum = -1, tempSum = 0;
-    bool allnegative = true;
+    int array[K];
 
-    for (int i = 0; i < K; ++i) {
-        scanf("%d", &current);
-        if (i == 0)
-            first = current;
-        if (!tempSum)
-            maymin = current;
+    int tmpSum = 0, maxSum = -1;
+    int mini = 0, maxi = K - 1, maymini = 0;
 
-        tempSum += current;
-        allnegative = allnegative && (current < 0);
-
-        if (tempSum > maxSum) {
-            maxSum = tempSum;
-            mini = maymin;
-            maxi = current;
+    for (int i = 0; i < K; i++) {
+        scanf("%d", &array[i]);
+        tmpSum += array[i];
+        if (tmpSum < 0) {
+            tmpSum = 0;
+            maymini = i + 1;
         }
-        else if (tempSum < 0)
-            tempSum = 0;
-    }
-    if (allnegative) {
-        mini = first;
-        maxi = current;
+        else if (tmpSum > maxSum) {
+            maxSum = tmpSum;
+            mini = maymini;
+            maxi = i;
+        }
     }
     if (maxSum < 0) maxSum = 0;
+    printf("%d %d %d", maxSum, array[mini], array[maxi]);
 
-    printf("%d %d %d\n", maxSum, mini, maxi);
+    return 0;
 }

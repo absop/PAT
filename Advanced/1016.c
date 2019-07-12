@@ -57,7 +57,6 @@ double bill(int i)
 
 int main()
 {
-    printf("%d\n", sizeof(__record));
     for (int i = 0; i < 24; ++i) {
         scanf("%d", &rate[i]);
         rate[i] *= 60;

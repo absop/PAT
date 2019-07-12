@@ -40,11 +40,11 @@ int main()
         }
 
     while (idx <= K) {
-        int mw = 1, et = vhead(1);
+        int mw = 1, leave = vhead(1);
         for (int i = 2; i <= N; ++i) {
-            if (vhead(i) < et) {
+            if (vhead(i) < leave) {
                 mw = i;
-                et = vhead(i);
+                leave = vhead(i);
             }
         }
         // printf("%d号顾客排在第%d号窗口\n", idx, mw);

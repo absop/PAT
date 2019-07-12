@@ -47,7 +47,7 @@ int main()
                 et = vhead(i);
             }
         }
-        // printf("%d ÅÅÔÚµÚ%dºÅ´°¿Ú\n", idx, mw);
+        // printf("%d æ’åœ¨ç¬¬%då·çª—å£\n", idx, mw);
         dequeue(mw);
         begin[idx] = vtail(mw);
         done[idx] += vtail(mw);

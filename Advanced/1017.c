@@ -77,10 +77,7 @@ int main()
         }
         ++cnt;
     }
-    if (cnt == 0)
-        printf("0.0\n");
-    else
-        printf("%.1lf\n", total / 60.0 / cnt);
+    printf("%.1lf\n", cnt == 0 ? 0.0 : total / 60.0 / cnt);
 
     return 0;
 }

@@ -6,6 +6,7 @@ def clean(dir):
         path = os.path.join(dir, file)
 
         if file.endswith(".exe"):
+            print("rm -f", path)
             os.remove(path)
 
         elif os.path.isdir(path):

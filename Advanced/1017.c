@@ -18,7 +18,7 @@ int cmp(const void *a, const void *b)
 // #define ptime(i) min(3600, customer[i].ptime)
 #if 0
 #define printtime(t) \
-    printf("%02d:%02d:%02d", (t) / 3600, ((t) / 60) % 60, (t) % 60);
+    printf("%02d:%02d:%02d", (t) / 3600, ((t) / 60) % 60, (t) % 60)
 
 #define showalltime()                   \
     for (int i = 0; i < N; ++i) {       \
@@ -31,7 +31,7 @@ int cmp(const void *a, const void *b)
         printf("%d served at window %d: ", i, w); \
         printtime(windows[w] - ptime(i));         \
         printf(" - ");                            \
-        printtime(windows[w])                     \
+        printtime(windows[w]);                    \
         putchar('\n');                            \
     } while (0)
 #else

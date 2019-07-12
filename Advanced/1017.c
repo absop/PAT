@@ -12,32 +12,32 @@ int cmp(const void *a, const void *b)
     return ((__customer *)a)->atime - ((__customer *)b)->atime;
 }
 
-char *strtime(int time)
-{
-    int h = time / 3600;
-    int m = (time % 3600) / 60;
-    int s = time % 60;
-    char *buf = (char *)malloc(16);
-    sprintf(buf, "%02d:%02d:%02d", h, m, s);
-    return buf;
-}
-
 #define atime(i) customer[i].atime
 #define ptime(i) customer[i].ptime
 // #define min(a, b) (((a) <= (b))? (a): (b))
 // #define ptime(i) min(3600, customer[i].ptime)
 #if 0
-    #define end(w) windows[w]
-    #define format "%d service at window %d: %s - %s\n"
-    #define outtime(i, w, b, e) printf(format, i, w, strtime(b), strtime(e))
-    #define out(i) printf("%d %s %d\n", i, strtime(atime(i)), ptime(i) / 60)
-    #define showalltime() for (int i = 0; i < N; ++i) out(i)
-    #define showtime(i, w) outtime(i, w, end(w) - ptime(i), end(w))
-#else
-    #define showalltime()
-    #define showtime(i, w)
-#endif
+#define printtime(t) \
+    printf("%02d:%02d:%02d", (t) / 3600, ((t) / 60) % 60, (t) % 60);
 
+#define showalltime()                   \
+    for (int i = 0; i < N; ++i) {       \
+        printf("%d ", i);               \
+        printtime(atime(i));            \
+        printf(" %d\n", ptime(i) / 60); \
+    }
+#define showtime(i, w)                            \
+    do {                                          \
+        printf("%d served at window %d: ", i, w); \
+        printtime(windows[w] - ptime(i));         \
+        printf(" - ");                            \
+        printtime(windows[w])                     \
+        putchar('\n');                            \
+    } while (0)
+#else
+#define showalltime()
+#define showtime(i, w)
+#endif
 
 int main()
 {

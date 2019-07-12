@@ -31,12 +31,10 @@ int main()
         enqueue(w, done[idx++]);
     }
     for (int x = 2; x <= M; ++x)
-        for (int w = 1; w <= N; ++w) {
-            if (idx <= K) {
-                begin[idx] = done[idx - N];
-                done[idx] += done[idx - N];
-                enqueue(w, done[idx++]);
-            }
+        for (int w = 1; w <= N && idx <= K; ++w) {
+            begin[idx] = done[idx - N];
+            done[idx] += done[idx - N];
+            enqueue(w, done[idx++]);
         }
 
     while (idx <= K) {

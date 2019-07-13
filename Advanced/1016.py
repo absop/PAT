@@ -27,8 +27,9 @@ for name in sorted(customer):
     record.sort(key=lambda x: x[0])
     i, pair = 1, []
     while i < len(record):
-        if(record[i - 1][1] and not record[i][1]):
-            pair.append(i)
+        if not record[i][1]:
+            if record[i - 1][1]:
+                pair.append(i)
             i += 1
         i += 1
     if pair:

@@ -60,12 +60,9 @@ void dijkstra()
                     rank(v, l) = j;
                     back(v, l) = back(u, j);
                     need(v, l) = need(u, j);
-                    if (bike[v] == 0) continue;
-                    int remain = back(u, j) + bike[v];
-                    if (bike[v] > 0 || remain > 0)
-                        back(v, l) = remain;
-                    else {
-                        need(v, l) = need(u, j) - remain;
+                    back(v, l) += bike[v];
+                    if (back(v, l) < 0) {
+                        need(v, l) -= back(v, l);
                         back(v, l) = 0;
                     }
                 }

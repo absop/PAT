@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define PRINT_NAME_MONTH (0)
-#define PRINT_TOTAL_AMOUNT (-1)
+#define ONE_BEGIN (0)
+#define ONE_TOTAL (-1)
 #define name(i) record[i].name
 #define time(i) record[i].time
 #define online(i) record[i].online
@@ -76,32 +76,32 @@ int main()
 
     qsort(record, N, sizeof(__record), cmp);
 
-    paired[count++] = PRINT_NAME_MONTH;
+    paired[count++] = ONE_BEGIN;
     for (int i = 1; i < N; ++i) {
         if (offline(i)) {
             if (online(i - 1) && sameone(i - 1, i)) {
                 if (count > 1 && !sameone(i, paired[count - 1])) {
-                    paired[count++] = PRINT_TOTAL_AMOUNT;
-                    paired[count++] = PRINT_NAME_MONTH;
+                    paired[count++] = ONE_TOTAL;
+                    paired[count++] = ONE_BEGIN;
                 }
                 paired[count++] = i;
             }
             ++i;
         }
     }
-    paired[count++] = PRINT_TOTAL_AMOUNT;
+    paired[count++] = ONE_TOTAL;
 
     int minute, i;
     double total = 0, once;
 
     for (int j = 0; j < count; ++j) {
         switch (paired[j]) {
-            case PRINT_NAME_MONTH:
+            case ONE_BEGIN:
                 i = paired[j + 1];
                 printf("%s %02d\n", name(i), month(i));
                 total = 0;
                 break;
-            case PRINT_TOTAL_AMOUNT:
+            case ONE_TOTAL:
                 printf("Total amount: $%.2lf\n", total);
                 break;
             default:

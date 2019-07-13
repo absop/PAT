@@ -2,11 +2,10 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-bool visit[1001];
-int stack[1001][2];
-int map[1001][1001];
 int N, M, K;
-
+int stack[1001][2];
+bool map[1001][1001];
+bool visit[1001];
 
 #if 0
     #define PRINT_PATH(...) printf(__VA_ARGS__)

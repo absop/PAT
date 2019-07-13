@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 bool visit[1001];
-int map[1001][1001];
+bool map[1001][1001];
 int N, M, K;
 
 
@@ -11,7 +11,7 @@ void dfs(int node)
 {
     visit[node] = true;
     for (int i = 1; i <= N; ++i) {
-        if (!visit[i] && map[node][i] == 1)
+        if (!visit[i] && map[node][i])
             dfs(i);
     }
 }

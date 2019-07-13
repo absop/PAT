@@ -30,10 +30,10 @@ void dijkstra(int N, int s)
 
     for (int i = 0; i < N; ++i) {
         u = s, mdist = INT_MAX;
-        for (int i = 0; i < N; ++i) {
-            if (!known[i] && dist[i] < mdist) {
-                mdist = dist[i];
-                u = i;
+        for (int j = 0; j < N; ++j) {
+            if (!known[j] && dist[j] < mdist) {
+                mdist = dist[j];
+                u = j;
             }
         }
 
@@ -55,9 +55,6 @@ void dijkstra(int N, int s)
                         path[v] = u;
                     }
                 }
-
-                // printf("u:%d v:%d dist[u]:%d totval[v]:%d\n",
-                //        u, v, dist[u], totval[v]);
             }
         }
     }

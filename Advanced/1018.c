@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct _path {
+struct _path {
     int cnt;
     int adj[500][4];
-} __path;
+} path[501];
 
 int bike[501];
 int dist[501] = {[0 ... 500] = INT_MAX};
@@ -16,7 +16,6 @@ int map[501][501] = {[0 ... 500] = {[0 ... 500] = INT_MAX}};
 int Cmax, N, Sp, M;
 int need, back;
 bool visit[501];
-__path path[501];
 
 #define need(v, i) path[v].adj[i][0]
 #define back(v, i) path[v].adj[i][1]

@@ -1,12 +1,10 @@
 #include <limits.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct _edge *pedge;
 typedef struct _vertex *pvertex;
-
-#define true 1
-#define false 0
 
 struct _edge {
     int city;

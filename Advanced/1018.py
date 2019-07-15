@@ -8,7 +8,7 @@ def dijkstra(s):
             if dist[v] < mdst:
                 mdst = dist[v]
                 u = v
-        visit[u] = True
+        # The visited array no longer needed.
         for v, w in graph.pop(u):
             if dist[u] + w > dist[v]: continue
             if dist[u] + w < dist[v]:
@@ -44,7 +44,6 @@ C, N, Sp, M = [int(i) for i in scanf()]
 bike = [0] + [int(i) - C // 2 for i in scanf()]
 
 graph = {v:[] for v in range(N + 1)}
-visit = [False for i in range(N + 1)]
 paths = [[] for i in range(N + 1)]
 dist = [inf for i in range(N + 1)]
 

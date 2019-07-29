@@ -100,7 +100,8 @@ int main()
         printf("Error: %d components\n", cnt);
     else {
         int count = num;
-        for (int i = 0; i < num; ++i) res[i] = temp[i];
+        for (int i = 0; i < num; ++i)
+            res[i] = temp[i];
 
         maxdepth = -1;
         fill(visit, N + 1, bool);

@@ -12,9 +12,7 @@ typedef struct _node {
 
 static __inline int cmp(const void *a, const void *b)
 {
-    int ka = ((struct _node *)a)->key;
-    int kb = ((struct _node *)b)->key;
-    return (ka - kb);
+    return (((struct _node *)a)->key - ((struct _node *)b)->key);
 }
 
 tnode LT[MAXN];

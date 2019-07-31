@@ -13,8 +13,6 @@ struct _stu {
 int R[101][102], N, K, cnt, l, s;
 long long no;
 
-
-
 void merge_sort(elem_t dest[], int lo, int hi)
 {
     if (hi - lo <= 1) return;

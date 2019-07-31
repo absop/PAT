@@ -21,6 +21,7 @@ int cmp(const void *pa, const void *pb)
            : (p->score > q->score ? -1 : 1);
 }
 
+
 int main()
 {
     scanf("%d", &N);

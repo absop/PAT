@@ -32,11 +32,7 @@ int main()
 
     for (int i = 0; i < N; ++i) {
         scanf("%d %d %d", &addr, &key, &next);
-        LT[addr] = (tnode){
-            addr: addr,
-            key: key,
-            next: next
-        };
+        LT[addr] = (tnode){addr, key, next};
     }
 
     pnode p, list = (tnode *)malloc(sizeof(tnode) * N);

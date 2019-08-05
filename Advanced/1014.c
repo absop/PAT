@@ -32,8 +32,7 @@ int main()
     }
     for (int x = 2; x <= M; ++x)
         for (int w = 1; w <= N && idx <= K; ++w) {
-            begin[idx] = done[idx - N];
-            done[idx] += done[idx - N];
+            done[idx] += (begin[idx] = done[idx - N]);
             enqueue(w, done[idx++]);
         }
 
@@ -47,8 +46,7 @@ int main()
         }
         // printf("%d号顾客排在第%d号窗口\n", idx, mw);
         dequeue(mw);
-        begin[idx] = vtail(mw);
-        done[idx] += vtail(mw);
+        done[idx] += (begin[idx] = vtail(mw));
         enqueue(mw, done[idx++]);
     }
 

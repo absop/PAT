@@ -21,14 +21,17 @@ int main()
         stat[i].price /= Da;
     }
     stat[N].dist = D;
+
     qsort(stat, N, sizeof(stat[0]), cmp1);
 
     if (stat[0].dist != 0) print_and_return(0);
     double total_price = 0, tank = 0;
     double Dm = Cm * Da, add, delta, min_price;
+
     for (int next, i = 0; stat[i].dist < D; i = next) {
         next = -1; min_price = 1e100;
-        for (int j = i + 1; j <= N && stat[j].dist <= stat[i].dist + Dm; j++) {
+        for (int j = i + 1; j <= N &&
+            stat[j].dist <= stat[i].dist + Dm; j++) {
             if (stat[j].price <= stat[i].price) {
                 next = j;
                 break;

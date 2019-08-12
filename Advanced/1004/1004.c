@@ -25,13 +25,12 @@ int main()
     int N, M;
     scanf("%d %d", &N, &M);
 
-    int ID, k, IDi;
+    int ID, k;
     int cnt = 0;
     for (int i = 0; i < M; ++i) {
         scanf("%d %d", &ID, &k);
         for (int j = 0; j < k; ++j) {
-            scanf("%d", &IDi);
-            table[ID][Nchild[ID]++] = IDi;
+            scanf("%d", &table[ID][Nchild[ID]++]);
         }
     }
 

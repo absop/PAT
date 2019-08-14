@@ -3,10 +3,6 @@
 #include <memory.h>
 #include <stdlib.h>
 
-#define new(len, type) (type *)malloc((len) * sizeof(type))
-#define fill(name, len, type) memset(name, 0, (len) * sizeof(type))
-#define newfill(name, len, type) name = new(len, type); fill(name, len, type)
-
 struct _node {
     int data;
     struct _node *next;
@@ -40,7 +36,7 @@ void dfs(int s, int d)
 int cmp(const void *i, const void *j) { return *((int *)i) - *((int *)j); }
 void add_edge(int i, int j)
 {
-    struct _node *p = new(1, struct _node);
+    struct _node *p = (struct _node*)malloc(sizeof(struct _node));
     p->data = j;
     p->next = NULL;
     if (adj[i].head != NULL)
@@ -61,10 +57,10 @@ void read_edge(int n)
 }
 void init(int n)
 {
-    newfill(res, n, int);
-    newfill(temp, n, int);
-    newfill(visit, n, bool);
-    newfill(adj, n, struct _adj);
+    res = (int*)calloc(n, sizeof(int));
+    temp = (int*)calloc(n, sizeof(int));
+    visit = (bool*)calloc(n, sizeof(bool));
+    adj = (struct _adj*)calloc(n, sizeof(struct _adj));
 }
 void gc()
 {
@@ -104,10 +100,10 @@ int main()
             res[i] = temp[i];
 
         maxdepth = -1;
-        fill(visit, N + 1, bool);
+        memset(visit, false, (N + 1) * sizeof(bool));
         dfs(temp[0], 0);
 
-        fill(visit, N + 1, bool);
+        memset(visit, false, (N + 1) * sizeof(bool));
         for (int i = 0; i < count; ++i)
             visit[res[i]] = true;
         for (int i = 0; i < num; ++i) {

@@ -4,25 +4,24 @@
 
 using namespace std;
 
-typedef struct _person *pp;
 typedef struct _person {
     string id;
     string intime;
     string outime;
-} tp;
+} person;
 
-bool incmp(tp i, tp j) { return i.intime < j.intime; }
-bool outcmp(tp i, tp j) { return i.outime < j.outime; }
+bool cmp1(const person a, const person b) { return a.intime < b.intime; }
+bool cmp2(const person a, const person b) { return a.outime < b.outime; }
 
 int main()
 {
     int M;
     cin >> M;
-    vector<tp> v(M);
+    vector<person> v(M);
     for (int i = 0; i < M; ++i)
         cin >> v[i].id >> v[i].intime >> v[i].outime;
 
-    tp unlock = *min_element(v.begin(), v.end(), incmp);
-    tp lock = *max_element(v.begin(), v.end(), outcmp);
-    cout << unlock.id << ' ' << lock.id << endl;
+    auto open = min_element(v.begin(), v.end(), cmp1);
+    auto lock = max_element(v.begin(), v.end(), cmp2);
+    cout << open->id << ' ' << lock->id << endl;
 }

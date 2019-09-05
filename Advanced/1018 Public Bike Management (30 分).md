@@ -4,6 +4,7 @@ There is a public bike service in Hangzhou City which provides great convenience
 
 The Public Bike Management Center (PBMC) keeps monitoring the real-time capacity of all the stations. A station is said to be in **perfect** condition if it is exactly half-full. If a station is full or empty, PBMC will collect or send bikes to adjust the condition of that station to perfect. And more, all the stations on the way will be adjusted as well.
 ![1018](../image/1018.png)
+
 When a problem station is reported, PBMC will always choose the shortest path to reach that station. If there are more than one shortest path, the one that requires the least number of bikes sent from PBMC will be chosen.
 
 The above figure illustrates an example. The stations are represented by vertices and the roads correspond to the edges. The number on an edge is the time taken to reach one end station from another. The number written inside a vertex $S$ is the current number of bikes stored at $S$. Given that the maximum capacity of each station is 10. To solve the problem at $S_3$, we have 2 different shortest paths:

@@ -93,10 +93,9 @@ int main()
         printtime(player[i].begin);
         printf("%.0f\n", round((player[i].begin - player[i].arrive) / 60.0));
     }
-    for (int i = 1; i <= K; i++) {
-        if (i != 1) printf(" ");
-        printf("%d", table[i].num);
-    }
+    printf("%d", table[1].num);
+    for (int i = 2; i <= K; i++)
+        printf(" %d", table[i].num);
 
     return 0;
 }

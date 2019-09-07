@@ -1,70 +1,29 @@
-/* written by 叶芝秋 */
 #include <stdio.h>
-#include <string.h>
 
-#ifndef __int64
-    #define __int64 long long
+#ifndef int64_t
+#define int64_t long long
 #endif
-
-// char *charv = "0123456789abcdefghijklmnopqrstuvwxyz";
-char vchar[128];
-
-__int64 parse(char *bits, int len, int radix)
-{
-    __int64 value = 0, bitvalue = 1;
-    while (--len >= 0) {
-        value += vchar[bits[len]] * bitvalue;
-        bitvalue *= radix;
-    }
-    return value;
-}
-
-void init()
-{
-    for (int i = '0'; i <= '9'; ++i)
-        vchar[i] = i - '0';
-    for (int i = 'a'; i <= 'z'; ++i)
-        vchar[i] = i - 'a' + 10;
-}
 
 int main()
 {
-    char N1[16] = {0}, N2[16] = {0};
-    char *N[2] = {N1, N2};
-    int tag, radix, klen, ulen;
-    __int64 kv, uv;
-    __int64 minr, midr, maxr;
-
-    init();
-
+    int tag, radix;
+    char N1[16] = {0}, N2[16] = {0}, *p, *pk = N1, *pu = N2;
+    int64_t kv, uv, minr, midr, maxr, vchr[128] = { 0 };
+    for (int i = '0'; i <= '9'; ++i) vchr[i] = i - '0';
+    for (int i = 'a'; i <= 'z'; ++i) vchr[i] = i - 'a' + 10;
+    
     scanf("%s %s %d %d", N1, N2, &tag, &radix);
-
-    tag -= 1;
-    klen = strlen(N[tag]);
-    ulen = strlen(N[!tag]);
-    kv = parse(N[tag], klen, radix);
-
-    int bitmax = 0;
-    for (int i = 0; i < ulen; ++i) {
-        if (N[!tag][i] > bitmax)
-            bitmax = N[!tag][i];
-    }
-    minr = vchar[bitmax] + 1;
-    maxr = kv + 1;
-
-    while (minr <= maxr) {
+    if (tag == 2) pk = N2, pu = N1;
+    for (p = pk, kv = vchr[*p]; *++p; kv = kv * radix + vchr[*p]);
+    for (p = pu, minr = *p; *++p; *p > minr && minr = *p);
+    for (minr = vchr[minr] + 1, maxr = kv + 1; minr <= maxr;) {
         midr = (minr + maxr) >> 1;
-        uv = parse(N[!tag], ulen, midr);
-        if (uv > kv || uv <= 0)
-            maxr = midr - 1;
-        else if (uv < kv)
-            minr = midr + 1;
-        else {
-            printf("%lld\n", midr);
-            return 0;
-        }
+        for (p = pu, uv = vchr[*p]; *++p; uv = uv * midr + vchr[*p]);
+        if (uv > kv || uv <= 0) maxr = midr - 1;
+        else if (uv < kv) minr = midr + 1;
+        else break;
     }
-    printf("Impossible\n");
-
+    uv == kv && printf("%lld\n", midr);
+    uv != kv && printf("Impossible\n");
     return 0;
 }

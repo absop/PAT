@@ -15,7 +15,7 @@ int main()
     scanf("%s %s %d %d", N1, N2, &tag, &radix);
     if (tag == 2) pk = N2, pu = N1;
     for (p = pk, kv = vchr[*p]; *++p; kv = kv * radix + vchr[*p]);
-    for (p = pu, minr = *p; *++p; *p > minr && minr = *p);
+    for (p = pu, minr = *p; *++p; *p > minr && (minr = *p));
     for (minr = vchr[minr] + 1, maxr = kv + 1; minr <= maxr;) {
         midr = (minr + maxr) >> 1;
         for (p = pu, uv = vchr[*p]; *++p; uv = uv * midr + vchr[*p]);

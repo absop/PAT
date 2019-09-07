@@ -1,14 +1,10 @@
 #include <stdio.h>
 
-#ifndef int64_t
-#define int64_t long long
-#endif
-
 int main()
 {
     int tag, radix;
     char N1[16] = {0}, N2[16] = {0}, *p, *pk = N1, *pu = N2;
-    int64_t kv, uv, minr, midr, maxr, vchr[128] = { 0 };
+    long long kv, uv, minr, midr, maxr, vchr[128] = { 0 };
     for (int i = '0'; i <= '9'; ++i) vchr[i] = i - '0';
     for (int i = 'a'; i <= 'z'; ++i) vchr[i] = i - 'a' + 10;
     

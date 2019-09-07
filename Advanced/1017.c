@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct _customer {
+typedef struct _customer_t {
     int atime;  // by second
     int ptime;  // by second
-} __customer;
+} customer_t;
 int windows[100] = {[0 ... 99] = 8 * 3600};
 
 int cmp(const void *a, const void *b)
 {
-    return ((__customer *)a)->atime - ((__customer *)b)->atime;
+    return ((customer_t *)a)->atime - ((customer_t *)b)->atime;
 }
 
 #define atime(i) customer[i].atime
@@ -45,7 +45,7 @@ int main()
     int h, m, s, p, second;
     double total = 0;
     scanf("%d %d", &N, &K);
-    __customer customer[N];
+    customer_t customer[N];
 
     for (int i = 0; i < N; ++i) {
         scanf("%d:%d:%d %d", &h, &m, &s, &p);

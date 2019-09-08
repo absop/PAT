@@ -54,7 +54,7 @@ int main()
         customer[i].ptime = p * 60;
     }
 
-    qsort(customer, N, sizeof(__customer), cmp);
+    qsort(customer, N, sizeof(customer_t), cmp);
 
     showalltime();
 

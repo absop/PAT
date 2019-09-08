@@ -32,37 +32,33 @@ void recursive_print_path(int v, int i)
 
 void dijkstra()
 {
+    int u, v, mindst;
     dist[0] = 0;
     path[0].cnt = 1;
-
-    for (int i = 0; i <= N; ++i) {
-        int u = -1, mindst = INT_MAX;
-        for (int j = 0; j <= N; ++j) {
-            if (!visit[j] && dist[j] < mindst) {
-                mindst = dist[j];
-                u = j;
+    for (int i = 0; i < N; ++i) {
+        for (mindst = INT_MAX, v = 0; v <= N; ++v) {
+            if (!visit[v] && dist[v] < mindst) {
+                mindst = dist[v];
+                u = v;
             }
         }
-        if (u == -1) break;
-        visit[u] = true;
-        for (int v = 0; v <= N; ++v) {
-            if (!visit[v] && map[u][v] != INT_MAX) {
-                if (dist[u] + map[u][v] > dist[v]) continue;
-                if (dist[u] + map[u][v] < dist[v]) {
-                    dist[v] = dist[u] + map[u][v];
-                    path[v].cnt = 0;
-                }
-                for (int j = 0; j < path[u].cnt; ++j) {
-                    int l = path[v].cnt++;
-                    prev(v, l) = u;
-                    rank(v, l) = j;
-                    back(v, l) = back(u, j);
-                    need(v, l) = need(u, j);
-                    back(v, l) += bike[v];
-                    if (back(v, l) < 0) {
-                        need(v, l) -= back(v, l);
-                        back(v, l) = 0;
-                    }
+        for (visit[u] = true, v = 0; v <= N; ++v) {
+            if (visit[v] || map[u][v] == INT_MAX) continue;
+            if (dist[u] + map[u][v] > dist[v]) continue;
+            if (dist[u] + map[u][v] < dist[v]) {
+                dist[v] = dist[u] + map[u][v];
+                path[v].cnt = 0;
+            }
+            for (int j = 0; j < path[u].cnt; ++j) {
+                int l = path[v].cnt++;
+                prev(v, l) = u;
+                rank(v, l) = j;
+                back(v, l) = back(u, j);
+                need(v, l) = need(u, j);
+                back(v, l) += bike[v];
+                if (back(v, l) < 0) {
+                    need(v, l) -= back(v, l);
+                    back(v, l) = 0;
                 }
             }
         }
@@ -107,4 +103,6 @@ int main()
     printf("%d ", need);
     recursive_print_path(Sp, opt);
     printf(" %d\n", back);
+
+    return 0;
 }

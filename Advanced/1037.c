@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #define MAXN 100000
-#define sort(lo, hi, cmp) qsort(lo, lo - hi, sizeof lo[0], cmp)
+#define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
 #define iptr(ptr) ((int*)ptr)
 #define cvptr const void *
 int cmp(cvptr a, cvptr b) { return *iptr(a) - *iptr(b); }

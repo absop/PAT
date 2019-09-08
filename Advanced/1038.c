@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define sort(lo, hi, cmp) qsort(lo, lo - hi, sizeof lo[0], cmp)
+#define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
 #define string(ptr) ((char*)ptr)
 
 static char s1[24], s2[24];

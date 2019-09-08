@@ -3,10 +3,10 @@
 #include <memory.h>
 #include <stdlib.h>
 
-#define cvptr const void *
-#define iptr(ptr) ((int*)ptr)
-#define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
 #define fill(lo, hi, val) memset(lo, val, (hi - lo) * sizeof lo[0])
+#define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
+#define iptr(ptr) ((int*)ptr)
+#define cvptr const void *
 int cmp(cvptr a, cvptr b) { return *iptr(a) - *iptr(b); }
 #define MAXN 10000
 

@@ -2,17 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct _stu {
+typedef struct _student_t {
     int no;
     char name[10];
     short grade;
-} stu[100000];
+} student_t;
 
+student_t stu[100000];
 int N, C, o_o;
 
-#define no(ptr) ((struct _stu*)ptr)->no
-#define name(ptr) ((struct _stu*)ptr)->name
-#define grade(ptr) ((struct _stu*)ptr)->grade
+#define no(ptr) ((student_t*)ptr)->no
+#define name(ptr) ((student_t*)ptr)->name
+#define grade(ptr) ((student_t*)ptr)->grade
 #define cmpx(a, b, x, cmp) (o_o = cmp(x(a), x(b)), o_o == 0? cmp1(a, b): o_o)
 #define cmpi(x, y) ((x) - (y))
 #define cvptr const void *

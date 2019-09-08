@@ -5,7 +5,7 @@
 
 
 typedef char *str;
-typedef struct _book *book_t;
+typedef struct _book book_t;
 
 
 int main()

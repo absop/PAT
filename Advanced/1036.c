@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct _student_t student_t;
-struct _student_t
-{
+typedef struct _student_t {
     char name[12];
     char id[12];
     int grade;
-};
+} student_t;
 
 int Nmale, Nfemale;
 int femaleHighest = -1, maleLowest = 101;

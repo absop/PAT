@@ -6,14 +6,14 @@ typedef struct _node {
     int data;
     btree lc;
     btree rc;
-} node;
+} node_t;
 btree queue[30];
 int top, vqueue[30], in[30], post[30];
 
 
 btree new(int data)
 {
-    btree t = (btree)malloc(sizeof(node));
+    btree t = (btree)malloc(sizeof(node_t));
     t->lc = t->rc = NULL;
     t->data = data;
     return t;

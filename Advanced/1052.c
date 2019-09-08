@@ -1,28 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXN 100000
-
-typedef struct _node *pnode;
-typedef struct _node {
+typedef struct _node_t {
     int addr;
     int key;
     int next;
-} tnode;
+} node_t;
 
-static __inline int cmp(const void *a, const void *b)
-{
-    return (((struct _node *)a)->key - ((struct _node *)b)->key);
-}
+node_t map[100000];
 
-tnode LT[MAXN];
+#define key(ptr) (((node_t*)ptr)->key)
+#define cvptr const void *
+int cmp(cvptr a, cvptr b) { return key(a) - key(b); }
 
 int main()
 {
     int N, len, head, addr, key, next;
 
     scanf("%d %d", &N, &head);
-
     if (N == 0 || head == -1) {
         printf("0 -1\n");
         return 0;
@@ -30,26 +25,18 @@ int main()
 
     for (int i = 0; i < N; ++i) {
         scanf("%d %d %d", &addr, &key, &next);
-        LT[addr] = (tnode){addr, key, next};
+        map[addr] = (node_t) {addr, key, next};
     }
 
-    pnode p, list = (tnode *)malloc(sizeof(tnode) * N);
+    node_t *list = (node_t *)malloc(sizeof(node_t) * N);
+    for (; head != -1; head = map[head].next)
+        list[len++] = map[head];
 
-    while (head != -1) {
-        list[len++] = LT[head];
-        head = LT[head].next;
-    }
-
-    qsort(list, len, sizeof(tnode), cmp);
-
+    qsort(list, len, sizeof(node_t), cmp);
     printf("%d %05d\n", len, list->addr);
-    for (p = list; p < list + len - 1; ++p) {
-        addr = p->addr;
-        key = p->key;
-        next = (p + 1)->addr;
-        printf("%05d %d %05d\n", addr, key, next);
-    }
-    printf("%05d %d -1\n", p->addr, p->key);
+    for (node_t *p = list; p < &list[len - 1]; ++p)
+        printf("%05d %d %05d\n", p->addr, p->key, (p + 1)->addr);
+    printf("%05d %d -1\n", list[len - 1].addr, list[len - 1].key);
 
     free(list);
 

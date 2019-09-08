@@ -31,17 +31,17 @@ typedef struct _record {
     char time[4];
     bool online;
     int minute;
-} __record;
+} record_t;
 
 char status[16];
 int N, rate[25];
 int paired[1000], count;
-__record record[1000];
+record_t record[1000];
 
 int cmp(const void *a, const void *b)
 {
-    __record *aa = (__record *)a;
-    __record *bb = (__record *)b;
+    record_t *aa = (record_t *)a;
+    record_t *bb = (record_t *)b;
     int res = strcmp(aa->name, bb->name);
     return res != 0 ? res : aa->minute - bb->minute;
 }
@@ -74,7 +74,7 @@ int main()
         record[i].minute = minute(i);
     }
 
-    qsort(record, N, sizeof(__record), cmp);
+    qsort(record, N, sizeof(record_t), cmp);
 
     paired[count++] = ONE_BEGIN;
     for (int i = 1; i < N; ++i) {

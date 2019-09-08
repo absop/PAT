@@ -3,120 +3,83 @@
 #include <memory.h>
 #include <stdlib.h>
 
-struct _node {
-    int data;
-    struct _node *next;
-};
+#define cvptr const void *
+#define iptr(ptr) ((int*)ptr)
+#define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
+#define fill(lo, hi, val) memset(lo, val, (hi - lo) * sizeof lo[0])
+int cmp(cvptr a, cvptr b) { return *iptr(a) - *iptr(b); }
+#define MAXN 10000
 
-struct _adj {
-    struct _node *head;
-    struct _node *tail;
-} *adj;
+struct _vector {
+    int len;
+    int alloc;
+    int *adj;
+} node[MAXN + 1];
+int temp[MAXN + 1], res[MAXN + 1], num, maxdepth;
+bool visit[MAXN + 1];
 
-int *temp, *res, N, num, maxdepth;
-bool *visit;
-
-void dfs(int s, int d)
+void dfs(int s, int depth)
 {
-    if (d >= maxdepth) {
-        if (d > maxdepth) {
+    if (depth >= maxdepth) {
+        if (depth > maxdepth) {
             num = 0;
-            maxdepth = d;
+            maxdepth = depth;
         }
         temp[num++] = s;
     }
     visit[s] = true;
-    // 全局变量慎用，此处如果p作为全局变量，会出现内存错误
-    for (struct _node *p = adj[s].head; p; p = p->next) {
-        if (!visit[p->data])
-            dfs(p->data, d + 1);
+    for (int i = 0; i < node[s].len; ++i) {
+        if (!visit[node[s].adj[i]])
+            dfs(node[s].adj[i], depth + 1);
     }
 }
 
-int cmp(const void *i, const void *j) { return *((int *)i) - *((int *)j); }
-void add_edge(int i, int j)
+void addedge(int i, int j)
 {
-    struct _node *p = (struct _node*)malloc(sizeof(struct _node));
-    p->data = j;
-    p->next = NULL;
-    if (adj[i].head != NULL)
-        adj[i].tail->next = p;
-    else
-        adj[i].head = p;
-    adj[i].tail = p;
-}
-
-void read_edge(int n)
-{
-    int a, b;
-    for (int i = 0; i < n; ++i) {
-        scanf("%d %d", &a, &b);
-        add_edge(a, b);
-        add_edge(b, a);
+    if (node[i].len >= node[i].alloc) {
+        node[i].alloc += 5;
+        node[i].adj = realloc(node[i].adj, sizeof(int) * node[i].alloc);
     }
-}
-void init(int n)
-{
-    res = (int*)calloc(n, sizeof(int));
-    temp = (int*)calloc(n, sizeof(int));
-    visit = (bool*)calloc(n, sizeof(bool));
-    adj = (struct _adj*)calloc(n, sizeof(struct _adj));
-}
-void gc()
-{
-    struct _node *q, *p;
-    for (int i = 1; i <= N; ++i) {
-        for (p = adj[i].head; p;) {
-            q = p->next;
-            free(p);
-            p = q;
-        }
-    }
-    free(adj);
-    free(res);
-    free(temp);
-    free(visit);
+    node[i].adj[node[i].len++] = j;
 }
 
 int main()
 {
-    int cnt = 0;
+    int node1, node2, N, count, cnt = 0;
     scanf("%d", &N);
-    init(N + 1);
-    read_edge(N - 1);
+    for (int i = 0; i < N - 1; ++i) {
+        scanf("%d %d", &node1, &node2);
+        addedge(node1, node2);
+        addedge(node2, node1);
+    }
 
-    dfs(1, 0); ++cnt;
-    for (int i = 2; i <= N; ++i) {
+    for (int i = 1; i <= N; ++i) {
         if (!visit[i]) {
             dfs(i, 0);
             ++cnt;
         }
     }
-    if (cnt > 1)
-        printf("Error: %d components\n", cnt);
-    else {
-        int count = num;
-        for (int i = 0; i < num; ++i)
-            res[i] = temp[i];
-
-        maxdepth = -1;
-        memset(visit, false, (N + 1) * sizeof(bool));
+    if (cnt == 1) {
+        count = num;
+        memcpy(res, temp, num * sizeof temp[0]);
+        fill(visit, visit + N + 1, false);
         dfs(temp[0], 0);
 
-        memset(visit, false, (N + 1) * sizeof(bool));
+        fill(visit, visit + N + 1, false);
         for (int i = 0; i < count; ++i)
             visit[res[i]] = true;
-        for (int i = 0; i < num; ++i) {
+        for (int i = count - 1; i < num; ++i) {
             if (!visit[temp[i]])
                 res[count++] = temp[i];
         }
-
-        qsort(res, count, sizeof(int), cmp);
-
+        sort(res, res + count, cmp);
         for (int i = 0; i < count; ++i)
             printf("%d\n", res[i]);
-
-        gc();
+    }
+    else printf("Error: %d components\n", cnt);
+    for (int i = 0; i < MAXN + 1; ++i) {
+        if (node[i].alloc)
+            free(node[i].adj);
     }
 
     return 0;

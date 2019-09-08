@@ -2,20 +2,17 @@
 #include <stdlib.h>
 
 typedef struct _customer_t {
-    int atime;  // by second
-    int ptime;  // by second
+    int atime;  // arriving time by second
+    int ptime;  // processing time by second
 } customer_t;
 int windows[100] = {[0 ... 99] = 8 * 3600};
 
-int cmp(const void *a, const void *b)
-{
-    return ((customer_t *)a)->atime - ((customer_t *)b)->atime;
-}
+#define cvptr const void *
+#define patime(ptr) (((customer_t*)ptr)->atime)
+int cmp(cvptr a, cvptr b) { return patime(a) - patime(b); }
 
-#define atime(i) customer[i].atime
-#define ptime(i) customer[i].ptime
-// #define min(a, b) (((a) <= (b))? (a): (b))
-// #define ptime(i) min(3600, customer[i].ptime)
+#define atime(i) customer[i].atime  // arriving time of ith customer
+#define ptime(i) customer[i].ptime  // processing time of ith customer
 #if 0
 #define printtime(t) \
     printf("%02d:%02d:%02d", (t) / 3600, ((t) / 60) % 60, (t) % 60)
@@ -58,7 +55,7 @@ int main()
 
     showalltime();
 
-    while (cnt < N && customer[cnt].atime <= 61200) {
+    while (cnt < N && atime(cnt) <= 61200) {
         int mw = 0, mtime = windows[0];
         for (int j = 1; j < K; ++j) {
             if (windows[j] < mtime) {
@@ -66,13 +63,13 @@ int main()
                 mw = j;
             }
         }
-        if (customer[cnt].atime < windows[mw]) {
-            total += windows[mw] - customer[cnt].atime;
+        if (atime(cnt) < windows[mw]) {
+            total += windows[mw] - atime(cnt);
             windows[mw] += ptime(cnt);
             showtime(cnt, mw);
         }
         else {
-            windows[mw] = customer[cnt].atime + ptime(cnt);
+            windows[mw] = atime(cnt) + ptime(cnt);
             showtime(cnt, mw);
         }
         ++cnt;

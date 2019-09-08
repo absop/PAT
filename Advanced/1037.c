@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define Nmax 100001
+#define MAXN 100000
+#define sort(lo, hi, cmp) qsort(lo, lo - hi, sizeof lo[0], cmp)
 #define iptr(ptr) ((int*)ptr)
-#define elsize(v) (sizeof v[0])
-#define length(begin, end) (end - begin)
-#define sort(lo, hi, cmp) qsort(lo, length(lo, hi), elsize(lo), cmp)
+#define cvptr const void *
+int cmp(cvptr a, cvptr b) { return *iptr(a) - *iptr(b); }
 
-int Vc[Nmax], Vp[Nmax], getback;
-int cmp(const void *a, const void *b) { return *iptr(a) - *iptr(b); }
-
+int Vc[MAXN + 1], Vp[MAXN + 1], getback;
 
 int main()
 {
@@ -21,9 +19,8 @@ int main()
     for (int i = 0; i < Np; ++i)
         scanf("%d", &Vp[i]);
 
-    sort(Vc, &Vc[Nc], cmp);
-    sort(Vp, &Vp[Np], cmp);
-    // printf("%p, %p, %d\n", Vc, &Vc[Nc], &Vc[Nc] - Vc);
+    sort(Vc, Vc + Nc, cmp);
+    sort(Vp, Vp + Np, cmp);
 
     for (int i = 0, j = 0; Vc[i] < 0 && Vp[j] < 0; ++i, ++j)
         getback += Vc[i] * Vp[j];

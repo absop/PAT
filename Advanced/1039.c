@@ -5,11 +5,10 @@
 #define H(c) (c - 'A')
 #define D(c) (c - '0')
 #define hash(s) (((H(s[0]) * 26 + H(s[1])) * 26 + H(s[2])) * 10 + D(s[3]))
-#define elemsize(v) (sizeof v[0])
-#define length(begin, end) (end - begin)
-#define sort(lo, hi, cmp) qsort(lo, length(lo, hi), elemsize(lo), cmp)
+#define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
 #define iptr(ptr) ((int*)ptr)
-int cmp(const void *a, const void *b) { return *iptr(a) - *iptr(b); }
+#define cvptr const void *
+int cmp(cvptr a, cvptr b) { return *iptr(a) - *iptr(b); }
 
 struct _vector {
     int len;

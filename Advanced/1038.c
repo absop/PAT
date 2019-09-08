@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define elemsize(v) (sizeof v[0])
-#define length(begin, end) (end - begin)
-#define sort(lo, hi, cmp) qsort(lo, length(lo, hi), elemsize(lo), cmp)
+#define sort(lo, hi, cmp) qsort(lo, lo - hi, sizeof lo[0], cmp)
 #define string(ptr) ((char*)ptr)
 
 static char s1[24], s2[24];

@@ -4,7 +4,9 @@ At the beginning of every day, the first person who signs in the computer room w
 
 ## Input Specification:
 Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer $M$, which is the total number of records, followed by $M$ lines, each in the format:
+
 `ID_number Sign_in_time Sign_out_time`
+
 where times are given in the format `HH:MM:SS`, and `ID_number` is a string with no more than 15 characters.
 
 ## Output Specification:

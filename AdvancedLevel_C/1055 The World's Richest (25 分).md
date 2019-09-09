@@ -7,6 +7,7 @@ Each input file contains one test case. For each case, the first line contains 2
 
 ## Output Specification:
 For each query, first print in a line `Case #X:` where `X` is the query number starting from 1. Then output the M richest people with their ages in the range [`Amin`, `Amax`]. Each person's information occupies a line, in the format
+
 `Name Age Net_Worth`
 
 The outputs must be in non-increasing order of the net worths. In case there are equal worths, it must be in non-decreasing order of the ages. If both worths and ages are the same, then the output must be in non-decreasing alphabetical order of the names. It is guaranteed that there is no two persons share all the same of the three pieces of information. In case no one is found, output `None`.

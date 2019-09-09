@@ -4,7 +4,9 @@ A family hierarchy is usually presented by a pedigree tree. Your job is to count
 
 ## Input Specification:
 Each input file contains one test case. Each case starts with a line containing $0 < N < 100$, the number of nodes in a tree, and $M (< N)$, the number of non-leaf nodes. Then M lines follow, each in the format:
+
 `ID K ID[1] ID[2] ... ID[K]`
+
 where `ID` is a two-digit number representing a given non-leaf node, `K` is the number of its children, followed by a sequence of two-digit `ID`'s of its children. For the sake of simplicity, let us fix the root ID to be `01`.
 
 The input ends with N being 0. That case must NOT be processed.

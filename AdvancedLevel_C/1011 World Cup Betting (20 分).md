@@ -6,10 +6,10 @@ Chinese Football Lottery provided a "Triple Winning" game. The rule of winning w
 
 For example, 3 games' odds are given as the following:
 ---
-W    T    L
-1.1  2.5  1.7
-1.2  3.1  1.6
-4.1  1.2  1.1
+W    T    L<br>
+1.1  2.5  1.7<br>
+1.2  3.1  1.6<br>
+4.1  1.2  1.1<br>
 ---
 To obtain the maximum profit, one must buy `W` for the 3rd game, `T` for the 2nd game, and `T` for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.1 × 3.1 × 2.5 × 65% − 1) × 2 = 39.31 yuans (accurate up to 2 decimal places).
 

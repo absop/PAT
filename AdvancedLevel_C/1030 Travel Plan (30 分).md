@@ -4,6 +4,7 @@ A traveler's map gives the distances between cities along the highways, together
 
 ## Input Specification:
 Each input file contains one test case. Each case starts with a line containing 4 positive integers $N, M, S$, and $D$, where $N (≤500)$ is the number of cities (and hence the cities are numbered from $0$ to $N−1$); $M$ is the number of highways; $S$ and $D$ are the starting and the destination cities, respectively. Then $M$ lines follow, each provides the information of a highway, in the format:
+
 `City1 City2 Distance Cost`
 
 where the numbers are all integers no more than 500, and are separated by a space.

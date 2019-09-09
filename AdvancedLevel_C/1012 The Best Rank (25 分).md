@@ -4,11 +4,11 @@ To evaluate the performance of our first year CS majored students, we consider t
 
 For example, The grades of `C`, `M`, `E` and `A` - Average of 4 students are given as the following:
 ---
-StudentID  C  M  E  A
-310101     98 85 88 90
-310102     70 95 88 84
-310103     82 87 94 88
-310104     91 91 91 91
+StudentID  C  M  E  A<br>
+310101     98 85 88 90<br>
+310102     70 95 88 84<br>
+310103     82 87 94 88<br>
+310104     91 91 91 91<br>
 ---
 Then the best ranks for all the students are No.1 since the 1st one has done the best in C Programming Language, while the 2nd one in Mathematics, the 3rd one in English, and the last one in average.
 

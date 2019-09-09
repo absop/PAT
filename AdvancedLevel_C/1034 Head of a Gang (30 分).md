@@ -4,6 +4,7 @@ One way that the police finds the head of a gang is to check people's phone call
 
 ## Input Specification:
 Each input file contains one test case. For each case, the first line contains two positive numbers $N$ and $K$ (both less than or equal to 1000), the number of phone calls and the weight threthold, respectively. Then $N$ lines follow, each in the following format:
+
 `Name1 Name2 Time`
 
 where `Name1` and `Name2` are the names of people at the two ends of the call, and `Time` is the length of the call. A name is a string of three capital letters chosen from `A`-`Z`. A time length is a positive integer which is no more than 1000 minutes.

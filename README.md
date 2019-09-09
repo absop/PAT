@@ -1,7 +1,9 @@
 
-# PAT
+# 浙江大学 PAT 题解
 
-My PAT solutions.
+`AdvancedLevel_C`目录下绝大部分题目使用`C语言`解答，少部分题目除C外还有`Python`或`C++`的解法，代码力求精简，格式规范统一，欢迎改进意见。
+
+每道题对应题目描述都有相应的`Markdown`文本，主要是为了方便本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
 
 Welcome to contribute code and star.
 
@@ -52,7 +54,6 @@ Welcome to contribute code and star.
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
-
 
 
 [README1001]: AdvancedLevel_C/1001%20A+B%20Format%20(20%20分).md

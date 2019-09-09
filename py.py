@@ -1,18 +1,21 @@
 import os
-import html
 import shutil
 
 
-template = """
-# PAT
+README_TEMPLATE = """
+# 浙江大学 PAT 题解
 
-My PAT solutions.
+`AdvancedLevel_C`目录下绝大部分题目使用`C语言`解答，少部分题目除C外还有`Python`或`C++`的解法，代码力求精简，格式规范统一，欢迎改进意见。
+
+每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
 
 Welcome to contribute code and star.
 
 ## Summary
 
-{toc}
+{summary}
+
+{footnotes}
 """
 
 
@@ -55,8 +58,9 @@ def merge(dir):
             print("%s removed"%dir0)
 
 
-def maketable(dir):
+def makesummary(dir):
     advanced = os.path.join("AdvancedLevel_C")
+    footnotefmt = "[%s]: AdvancedLevel_C/%s"
     linkfmt = "[`%s`][%s]"
     language = {
         "md": "Markdown", "c": "C",
@@ -70,7 +74,7 @@ def maketable(dir):
             ident = "README" + idnum
             readme = linkfmt % (file[5:-10], ident)
             link = file.replace(" ", "%20")
-            footnotes.append("[%s]: AdvancedLevel_C/%s" % (ident, link))
+            footnotes.append(footnotefmt % (ident, link))
             exercises[idnum] = [readme, file[-8:-6], []]
 
         else:
@@ -82,7 +86,7 @@ def maketable(dir):
         idnum = file[:4]
         if idnum in exercises:
             exercises[idnum][2].append(linkfmt % (file, file))
-            footnotes.append("[%s]: AdvancedLevel_C/%s" % (file, file))
+            footnotes.append(footnotefmt % (file, file))
 
     for idnum in exercises:
         exercises[idnum][2] = ",".join(exercises[idnum][2])
@@ -90,19 +94,18 @@ def maketable(dir):
 
     len2 = max([len(v[0]) for v in exercises.values()])
     rowfmt = "|%s|%-" + str(len2) + "s|%s|%s|\n"
-    table = rowfmt % ("标号", "标题", "分数", "代码")
-    table += rowfmt % ("---", len2 * "-", "---", "---")
+    summary = rowfmt % ("标号", "标题", "分数", "代码")
+    summary += rowfmt % ("---", len2 * "-", "---", "---")
     for idnum in exercises:
         title, score, src = exercises[idnum]
-        table += rowfmt % (idnum, title, score, src)
+        summary += rowfmt % (idnum, title, score, src)
 
-    return (table, footnotes)
+    return (summary, footnotes)
 
 
 def makereadme(dir):
-    toc, footnotes = maketable(dir)
-    text = template.format(toc=toc)
-    text += "\n\n" + footnotes
+    summary, footnotes = makesummary(dir)
+    text = README_TEMPLATE.format(summary=summary, footnotes=footnotes)
     with open("README.md", "w+", encoding="utf-8") as readme:
         readme.write(text)
 

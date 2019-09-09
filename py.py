@@ -55,24 +55,58 @@ def merge(dir):
             print("%s removed"%dir0)
 
 
-def mktoc(dir):
+def maketable(dir):
     advanced = os.path.join("AdvancedLevel_C")
-    fmt = '* [%s](AdvancedLevel_C/%s)\n'
-    toc = [f for f in os.listdir(advanced) if f.endswith(".md")]
-    toc = [fmt % (f.rstrip(".md"), html.escape(f)) for f in sorted(toc)]
-    toc = "".join(toc)
+    linkfmt = "[`%s`][%s]"
+    language = {
+        "md": "Markdown", "c": "C",
+        "c++": "Cpp", "cpp": "Cpp",
+        "py": "Python"
+    }
+    exercises, source = {}, []
+    for file in sorted(os.listdir(advanced)):
+        if file[:4].isdigit() and file.endswith(".md"):
+            exercises[file[:4]] = [file[5:-10], file[-8:-6], []]
+        else:
+            ext = os.path.splitext(file)[1].lstrip(".").lower()
+            if ext in language:
+                source.append(file)
 
-    return toc
+    footnotes = []
+    for file in source:
+        idnum = file[:4]
+        if idnum in exercises:
+            exercises[idnum][2].append(linkfmt % (file, file))
+            footnotes.append("[%s]: AdvancedLevel_C/%s" % (file, file))
 
-def mkreadme(dir):
-    toc = mktoc(dir)
+    for idnum in exercises:
+        exercises[idnum][2] = ",".join(exercises[idnum][2])
+    footnotes = "\n".join(footnotes)
+
+    len2 = max([len(v[0]) for v in exercises.values()])
+    len4 = max([len(v[2]) for v in exercises.values()])
+    len1, len3 = len2 - 2, len4 - 2
+    rowfmt = "|%s|%-" + str(len1) + "s|%s|%-" + str(len3) + "s|\n"
+    table = rowfmt % ("标号", "标题", "分数", "代码")
+    rowfmt = "|%s|%-" + str(len2) + "s|%s|%-" + str(len4) + "s|\n"
+    table += rowfmt % (4 * "-", len2 * "-", 2 * "-", len4 * "-")
+    for idnum in exercises:
+        title, score, src = exercises[idnum]
+        table += rowfmt % (idnum, title, score, src)
+
+    return (table, footnotes)
+
+
+def makereadme(dir):
+    toc, footnotes = maketable(dir)
     text = template.format(toc=toc)
+    text += "\n\n" + footnotes
     with open("README.md", "w+", encoding="utf-8") as readme:
         readme.write(text)
 
 
 if __name__ == "__main__":
-    mkreadme(os.path.dirname(__file__))
+    makereadme(os.path.dirname(__file__))
     # isolate(os.path.dirname(__file__))
     # merge(os.path.dirname(__file__))
     # clean(os.path.dirname(__file__))

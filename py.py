@@ -67,6 +67,7 @@ def maketable(dir):
     for file in sorted(os.listdir(advanced)):
         if file[:4].isdigit() and file.endswith(".md"):
             exercises[file[:4]] = [file[5:-10], file[-8:-6], []]
+            source.append(file)
         else:
             ext = os.path.splitext(file)[1].lstrip(".").lower()
             if ext in language:
@@ -76,8 +77,15 @@ def maketable(dir):
     for file in source:
         idnum = file[:4]
         if idnum in exercises:
-            exercises[idnum][2].append(linkfmt % (file, file))
-            footnotes.append("[%s]: AdvancedLevel_C/%s" % (file, file))
+            if file.endswith(".md"):
+                ident = "README" + idnum
+                display = "题目描述"
+            else:
+                ident = file
+                display = file
+            file = file.replace(" ", "%20")
+            exercises[idnum][2].append(linkfmt % (display, ident))
+            footnotes.append("[%s]: AdvancedLevel_C/%s" % (ident, file))
 
     for idnum in exercises:
         exercises[idnum][2] = ",".join(exercises[idnum][2])

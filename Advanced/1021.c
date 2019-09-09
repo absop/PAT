@@ -14,7 +14,7 @@ struct _vector {
     int len;
     int alloc;
     int *adj;
-} node[MAXN + 1];
+} graph[MAXN + 1];
 int temp[MAXN + 1], res[MAXN + 1], num, maxdepth;
 bool visit[MAXN + 1];
 
@@ -28,19 +28,19 @@ void dfs(int s, int depth)
         temp[num++] = s;
     }
     visit[s] = true;
-    for (int i = 0; i < node[s].len; ++i) {
-        if (!visit[node[s].adj[i]])
-            dfs(node[s].adj[i], depth + 1);
+    for (int i = 0; i < graph[s].len; ++i) {
+        if (!visit[graph[s].adj[i]])
+            dfs(graph[s].adj[i], depth + 1);
     }
 }
 
 void addedge(int i, int j)
 {
-    if (node[i].len >= node[i].alloc) {
-        node[i].alloc += 5;
-        node[i].adj = realloc(node[i].adj, sizeof(int) * node[i].alloc);
+    if (graph[i].len >= graph[i].alloc) {
+        graph[i].alloc += 5;
+        graph[i].adj = realloc(graph[i].adj, sizeof(int) * graph[i].alloc);
     }
-    node[i].adj[node[i].len++] = j;
+    graph[i].adj[graph[i].len++] = j;
 }
 
 int main()
@@ -77,9 +77,9 @@ int main()
             printf("%d\n", res[i]);
     }
     else printf("Error: %d components\n", cnt);
-    for (int i = 0; i < MAXN + 1; ++i) {
-        if (node[i].alloc)
-            free(node[i].adj);
+    for (int i = 1; i <= N; ++i) {
+        if (graph[i].alloc)
+            free(graph[i].adj);
     }
 
     return 0;

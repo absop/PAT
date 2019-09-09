@@ -1,113 +1,107 @@
-/*
- * https://blog.csdn.net/coord_/article/details/54974412#
- * 修改此页面代码而来。
- */
-
+/* 参考: https://blog.csdn.net/coord_/article/details/54974412# */
 #include <algorithm>
 #include <climits>
 #include <iostream>
 #include <vector>
 using namespace std;
 
-const int Nmax = 501;
-int Cmax, N, Sp, M, C2;
-int bike[Nmax];
-int map[Nmax][Nmax];
-int take, rtn;
+typedef struct _vertex {
+    int vertex, dist;
+} edge_t;
 
-int dist[Nmax];
-bool visit[Nmax];
-vector<vector<int>> path[Nmax];
+typedef struct _path {
+    int need = 0;
+    int back = 0;
+    vector<int> vertexs;
+} path_t;
 
-void DIJKSTRA()
+int bike[501];
+bool visit[501];
+vector<vector<edge_t>> graph;
+vector<vector<path_t>> paths;
+
+void DIJKSTRA(int N)
 {
-    fill(visit, visit + Nmax, false);
-    fill(dist, dist + Nmax, INT_MAX);
+    int u, v, d, mindst, dist[N + 1];
+    path_t path;
+
+    fill(dist, dist + N + 1, INT_MAX);
     dist[0] = 0;
+    path.vertexs.push_back(0);
+    paths[0].push_back(path);
 
-    vector<int> v;
-    v.push_back(0);
-    path[0].push_back(v);
-
-    for (int j = 0; j <= N; j++) {
-        int min = INT_MAX;
-        int k = -1;
-        for (int i = 0; i <= N; i++) {
-            if (!visit[i] && dist[i] < min) {
-                min = dist[i];
-                k = i;
+    for (int i = 0; i < N; i++) {
+        for (mindst = INT_MAX, v = 0; v <= N; v++) {
+            if (!visit[v] && dist[v] < mindst) {
+                mindst = dist[v];
+                u = v;
             }
         }
-        if (k == -1) break;
-        visit[k] = true;
-        for (int i = 0; i <= N; i++) {
-            if (!visit[i] && map[k][i] != INT_MAX) {
-                if (dist[k] + map[k][i] > dist[i]) continue;
-                if (dist[k] + map[k][i] < dist[i]) {
-                    dist[i] = dist[k] + map[k][i];
-                    path[i].clear();
+        visit[u] = true;
+        for (auto edge : graph[u]) {
+            v = edge.vertex, d = edge.dist;
+            if (visit[v]) continue;
+            if (dist[u] + d > dist[v]) continue;
+            if (dist[u] + d < dist[v]) {
+                dist[v] = dist[u] + d;
+                paths[v].clear();
+            }
+            for (int j = 0; j < paths[u].size(); ++j) {
+                path = paths[u][j];
+                path.back += bike[v];
+                if (path.back < 0) {
+                    path.need -= path.back;
+                    path.back = 0;
                 }
-                for (int l = 0; l < path[k].size(); l++) {
-                    path[i].push_back(path[k].at(l));
-                    path[i].at(path[i].size() - 1).push_back(i);
-                }
+                path.vertexs.push_back(v);
+                paths[v].push_back(path);
             }
         }
     }
 }
 
-int select_optimal_path(int sp)
+path_t select_optimal_path(int sp)
 {
-    int opt = -1;
-    take = rtn = INT_MAX;
-    for (int i = 0; i < path[sp].size(); i++) {
-        vector<int> p = path[sp].at(i);
-        int tk = 0, rt = 0;
-        for (int j = 1; j < p.size(); j++) {
-            if (bike[p.at(j)] == 0) continue;
-            int remain = rt + bike[p.at(j)];
-            if (bike[p.at(j)] > 0 || remain > 0)
-                rt = remain;
-            else {
-                tk -= remain;
-                rt = 0;
-            }
+    path_t optimal;
+    int need = INT_MAX, back = INT_MAX;
+    for (auto path : paths[sp]) {
+        if (path.need < need) {
+            optimal = path;
+            need = path.need;
+            back = path.back;
         }
-        if (tk < take) {
-            opt = i;
-            take = tk;
-            rtn = rt;
-        }
-        else if (tk == take && rt < rtn) {
-            opt = i;
-            rtn = rt;
+        else if (path.need == need && path.back < back) {
+            optimal = path;
+            back = path.back;
         }
     }
-    return opt;
+    return optimal;
 }
 
 int main()
 {
+    int Cmax, N, Sp, M;
+    int r1, r2, weight;
+
     cin >> Cmax >> N >> Sp >> M;
+    graph.resize(N + 1);
+    paths.resize(N + 1);
     for (int i = 1; i <= N; i++) {
         cin >> bike[i];
         bike[i] -= Cmax / 2;
     }
-    int r1, r2, weight;
-    fill(map[0], map[0] + Nmax * Nmax, INT_MAX);
     for (int i = 0; i < M; i++) {
         cin >> r1 >> r2 >> weight;
-        map[r2][r1] = map[r1][r2] = weight;
+        graph[r1].push_back({r2, weight});
+        graph[r2].push_back({r1, weight});
     }
 
-    DIJKSTRA();
-    int o = select_optimal_path(Sp);
-    vector<int> v = path[Sp].at(o);
-
-    cout << take << " " << v.at(0);
-    for (int i = 1; i < v.size(); i++)
-        cout << "->" << v.at(i);
-    cout << " " << rtn;
+    DIJKSTRA(N);
+    path_t path = select_optimal_path(Sp);
+    cout << path.need << " " << path.vertexs[0];
+    for (int i = 1; i < path.vertexs.size(); i++)
+        cout << "->" << path.vertexs[i];
+    cout << " " << path.back;
 
     return 0;
 }

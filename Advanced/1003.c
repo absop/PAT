@@ -28,7 +28,7 @@ void dijkstra(int N, int s)
             if (d > dist[v]) continue;
             if (d < dist[v]) {
                 dist[v] = d;
-                prev[v] = u; // 这句注释之后能通过测试，但似乎只能通过测试
+                prev[v] = u; // 这句注释之后能通过测试
                 pathnum[v] = 0;
             }
             pathnum[v] += pathnum[u];

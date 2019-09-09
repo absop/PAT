@@ -2,6 +2,19 @@ import os
 import shutil
 
 
+template = """
+# PAT
+
+My PAT solutions.
+
+Welcome to contribute code and star.
+
+题目集
+
+{toc}
+"""
+
+
 def clean(dir):
     for file in os.listdir(dir):
         path = os.path.join(dir, file)
@@ -14,7 +27,7 @@ def clean(dir):
             clean(path)
 
 def isolate(dir):
-    advanced = os.path.join("Advanced")
+    advanced = os.path.join("AdvancedLevel_C")
     for file in os.listdir(advanced):
         src0 = os.path.join(advanced, file)
         if os.path.isdir(src0):
@@ -29,7 +42,7 @@ def isolate(dir):
         shutil.move(src0, dest)
 
 def merge(dir):
-    advanced = os.path.join("Advanced")
+    advanced = os.path.join("AdvancedLevel_C")
     for file in os.listdir(advanced):
         dir0 = os.path.join(advanced, file)
         if os.path.isdir(dir0):
@@ -41,7 +54,24 @@ def merge(dir):
             print("%s removed"%dir0)
 
 
+def mktoc(dir):
+    advanced = os.path.join("AdvancedLevel_C")
+    fmt = '[%s](/AdvancedLevel_C/%s)\n'
+    toc = [f for f in os.listdir(advanced) if f.endswith(".md")]
+    toc = [fmt % (f.rstrip(".md"), f) for f in sorted(toc)]
+    toc = "".join(toc)
+
+    return toc
+
+def mkreadme(dir):
+    toc = mktoc(dir)
+    text = template.format(toc=toc)
+    with open("README.md", "w+", encoding="utf-8") as readme:
+        readme.write(text)
+
+
 if __name__ == "__main__":
+    mkreadme(os.path.dirname(__file__))
     # isolate(os.path.dirname(__file__))
-    merge(os.path.dirname(__file__))
-    clean(os.path.dirname(__file__))
+    # merge(os.path.dirname(__file__))
+    # clean(os.path.dirname(__file__))

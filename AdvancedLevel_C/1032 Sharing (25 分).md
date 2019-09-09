@@ -12,6 +12,7 @@ You are supposed to find the starting position of the common suffix (e.g. the po
 Each input file contains one test case. For each case, the first line contains two addresses of nodes and a positive $N (≤10^5)$, where the two addresses are the addresses of the first nodes of the two words, and $N$ is the total number of nodes. The address of a node is a 5-digit positive integer, and *NULL* is represented by *−1*.
 
 Then $N$ lines follow, each describes a node in the format:
+
 `Address Data Next`
 
 where `Address` is the position of the node, `Data` is the letter contained by this node which is an English letter chosen from $\{ a-z, A-Z \}$, and `Next` is the position of the next node.

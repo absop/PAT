@@ -1,4 +1,5 @@
 import os
+import html
 import shutil
 
 
@@ -58,7 +59,7 @@ def mktoc(dir):
     advanced = os.path.join("AdvancedLevel_C")
     fmt = '* [%s](AdvancedLevel_C/%s)\n'
     toc = [f for f in os.listdir(advanced) if f.endswith(".md")]
-    toc = [fmt % (f.rstrip(".md"), f.replace("(", "\\(").replace(")", "\\)")) for f in sorted(toc)]
+    toc = [fmt % (f.rstrip(".md"), html.escape(f)) for f in sorted(toc)]
     toc = "".join(toc)
 
     return toc

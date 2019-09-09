@@ -2,12 +2,12 @@
 
 Given any string of $N (≥5)$ characters, you are asked to form the characters into the shape of `U`. For example, `helloworld` can be printed as:
 
-`
-h  d<br>
-e  l<br>
-l  r<br>
-lowo<br>
-`
+```
+h  d
+e  l
+l  r
+lowo
+```
 
 That is, the characters must be printed in the original order, starting top-down from the left vertical line with $n_1$ characters, then left to right along the bottom line with $n_2$ characters, and finally bottom-up along the vertical line with $n_3$ characters. And more, we would like `U` to be as squared as possible -- that is, it must be satisfied that
 $n_1 = n_3 = max\{k | k ≤ n_2 for all 3 ≤ n_2 ≤ N\} with n_1 + n_2 + n_3 - 2 = N$.

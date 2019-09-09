@@ -3,9 +3,8 @@
 
 `AdvancedLevel_C`目录下绝大部分题目使用`C语言`解答，少部分题目除C外还有`Python`或`C++`的解法，代码力求精简，格式规范统一，欢迎改进意见。
 
-每道题对应题目描述都有相应的`Markdown`文本，主要是为了方便本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
+每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
 
-Welcome to contribute code and star.
 
 ## Summary
 
@@ -51,9 +50,13 @@ Welcome to contribute code and star.
 |1038|[`Recover the Smallest Number`][README1038]|30|[`1038.c`][1038.c]|
 |1039|[`Course List for Student`][README1039]    |25|[`1039.c`][1039.c]|
 |1040|[`Longest Symmetric String`][README1040]   |25|[`1040.c`][1040.c]|
+|1041|[`Be Unique`][README1041]                  |20|[`1041.c`][1041.c]|
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
+
+
+Welcome to contribute code and star.
 
 
 [README1001]: AdvancedLevel_C/1001%20A+B%20Format%20(20%20分).md
@@ -96,6 +99,7 @@ Welcome to contribute code and star.
 [README1038]: AdvancedLevel_C/1038%20Recover%20the%20Smallest%20Number%20(30%20分).md
 [README1039]: AdvancedLevel_C/1039%20Course%20List%20for%20Student%20(25%20分).md
 [README1040]: AdvancedLevel_C/1040%20Longest%20Symmetric%20String%20(25%20分).md
+[README1041]: AdvancedLevel_C/1041%20Be%20Unique%20(20%20分).md
 [README1050]: AdvancedLevel_C/1050%20String%20Subtraction%20(20%20分).md
 [README1052]: AdvancedLevel_C/1052%20Linked%20List%20Sorting%20(25%20分).md
 [README1055]: AdvancedLevel_C/1055%20The%20World's%20Richest%20(25%20分).md
@@ -149,6 +153,7 @@ Welcome to contribute code and star.
 [1038.c]: AdvancedLevel_C/1038.c
 [1039.c]: AdvancedLevel_C/1039.c
 [1040.c]: AdvancedLevel_C/1040.c
+[1041.c]: AdvancedLevel_C/1041.c
 [1050.c]: AdvancedLevel_C/1050.c
 [1052.c]: AdvancedLevel_C/1052.c
 [1055.c]: AdvancedLevel_C/1055.c

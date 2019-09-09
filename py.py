@@ -9,11 +9,13 @@ README_TEMPLATE = """
 
 每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
 
-Welcome to contribute code and star.
 
 ## Summary
 
 {summary}
+
+Welcome to contribute code and star.
+
 
 {footnotes}
 """

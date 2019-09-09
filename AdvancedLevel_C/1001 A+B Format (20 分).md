@@ -9,7 +9,11 @@ Each input file contains one test case. Each case contains a pair of integers a 
 For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.
 
 ## Sample Input:
+```
 -1000000 9
+```
 
 ## Sample Output:
+```
 -999,991
+```

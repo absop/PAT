@@ -11,12 +11,16 @@ Each input file contains one test case. Each case starts with a line containing 
 For each of the $K$ cities, output in a line the number of highways need to be repaired if that city is lost.
 
 ## Sample Input:
+```
 3 2 3
 1 2
 1 3
 1 2 3
+```
 
 ## Sample Output:
+```
 1
 0
 0
+```

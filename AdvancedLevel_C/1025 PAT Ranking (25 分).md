@@ -13,6 +13,7 @@ For each test case, first print in one line the total number of testees. Then pr
 The locations are numbered from $1$ to $N$. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.
 
 ## Sample Input:
+```
 2
 5
 1234567890001 95
@@ -25,8 +26,10 @@ The locations are numbered from $1$ to $N$. The output must be sorted in nondecr
 1234567890011 25
 1234567890014 100
 1234567890012 85
+```
 
 ## Sample Output:
+```
 9
 1234567890005 1 1 1
 1234567890014 1 2 1
@@ -37,3 +40,4 @@ The locations are numbered from $1$ to $N$. The output must be sorted in nondecr
 1234567890002 7 1 5
 1234567890013 8 2 3
 1234567890011 9 2 4
+```

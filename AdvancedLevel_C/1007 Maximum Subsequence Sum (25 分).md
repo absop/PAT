@@ -11,8 +11,12 @@ Each input file contains one test case. Each case occupies two lines. The first 
 For each test case, output in one line the largest sum, together with the first and the last numbers of the maximum subsequence. The numbers must be separated by one space, but there must be no extra space at the end of a line. In case that the maximum subsequence is not unique, output the one with the smallest indices i and j (as shown by the sample case). If all the K numbers are negative, then its maximum sum is defined to be 0, and you are supposed to output the first and the last numbers of the whole sequence.
 
 ## Sample Input:
+```
 10
 -10 1 2 3 4 -5 -23 3 7 -21
+```
 
 ## Sample Output:
+```
 10 1 4
+```

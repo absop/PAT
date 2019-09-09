@@ -13,15 +13,23 @@ Each input file contains one test case. Each case consists of two positive numbe
 For each test case, first print in one line `Yes` if $N$ is a palindromic number in base $b$, or `No` if not. Then in the next line, print $N$ as the number in base $b$ in the form "$a_k a_{k-1} \cdots a_0$". Notice that there must be no extra space at the end of output.
 
 ## Sample Input 1:
+```
 27 2
+```
 
 ## Sample Output 1:
+```
 Yes
 1 1 0 1 1
+```
 
 ## Sample Input 2:
+```
 121 5
+```
 
 ## Sample Output 2:
+```
 No
 4 4 1
+```

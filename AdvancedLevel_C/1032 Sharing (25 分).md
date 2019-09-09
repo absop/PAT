@@ -21,6 +21,7 @@ where `Address` is the position of the node, `Data` is the letter contained by t
 For each case, simply output the 5-digit starting position of the common suffix. If the two words have no common suffix, output `-1` instead.
 
 ## Sample Input 1:
+```
 11111 22222 9
 67890 i 00002
 00010 a 12345
@@ -31,16 +32,23 @@ For each case, simply output the 5-digit starting position of the common suffix.
 11111 L 00001
 23456 e 67890
 00001 o 00010
+```
 
 ## Sample Output 1:
+```
 67890
+```
 
 ## Sample Input 2:
+```
 00001 00002 4
 00001 a 10001
 10001 s -1
 00002 a 10002
 10002 t -1
+```
 
 ## Sample Output 2:
+```
 -1
+```

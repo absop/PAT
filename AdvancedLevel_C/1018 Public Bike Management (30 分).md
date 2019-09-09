@@ -22,6 +22,7 @@ For each test case, print your results in one line. First output the number of b
 Note that if such a path is not unique, output the one that requires minimum number of bikes that we must take back to PBMC. The judge's data guarantee that such a path is unique.
 
 ## Sample Input:
+```
 10 3 3 5
 6 7 0
 0 1 1
@@ -29,6 +30,9 @@ Note that if such a path is not unique, output the one that requires minimum num
 0 3 3
 1 3 1
 2 3 1
+```
 
 ## Sample Output:
+```
 3 0->2->3 0
+```

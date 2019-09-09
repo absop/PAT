@@ -10,7 +10,11 @@ For each test case, simply print the maximum length in a line.
 
 
 ##Sample Input:
+```
 Is PAT&TAP symmetric?
+```
 
 ##Sample Output:
+```
 11
+```

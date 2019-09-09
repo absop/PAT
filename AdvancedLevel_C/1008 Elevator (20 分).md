@@ -11,7 +11,11 @@ Each input file contains one test case. Each case contains a positive integer $N
 For each test case, print the total time on a single line.
 
 ## Sample Input:
+```
 3 2 3 1
+```
 
 ## Sample Output:
+```
 41
+```

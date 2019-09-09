@@ -13,10 +13,14 @@ Each input file contains one test case. For each case, the first line contains t
 For each test case, simply print in a line the maximum amount of money you can get back.
 
 ## Sample Input:
+```
 4
 1 2 4 -1
 4
 7 6 -2 -3
+```
 
 ## Sample Output:
+```
 43
+```

@@ -25,6 +25,7 @@ The priorities of the ranking methods are ordered as `A` > `C` > `M` > `E`. Henc
 If a student is not on the grading list, simply output `N/A`.
 
 ## Sample Input:
+```
 5 6
 310101 98 85 88
 310102 70 95 88
@@ -37,11 +38,14 @@ If a student is not on the grading list, simply output `N/A`.
 310104
 310105
 999999
+```
 
 ## Sample Output:
+```
 1 C
 1 M
 1 E
 1 A
 3 A
 N/A
+```

@@ -15,10 +15,14 @@ For each test case, output in one line the ID numbers of the persons who have un
 Note: It is guaranteed that the records are consistent. That is, the sign in time must be earlier than the sign out time for each person, and there are no two persons sign in or out at the same moment.
 
 ## Sample Input:
+```
 3
 CS301111 15:30:28 17:00:10
 SC3021234 08:00:00 11:25:25
 CS301133 21:45:00 21:58:40
+```
 
 ## Sample Output:
+```
 SC3021234 CS301133
+```

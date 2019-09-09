@@ -9,7 +9,11 @@ Each input file contains one test case. Each case gives a positive integer $N (â
 For each test case, print the smallest number in one line. Notice that the first digit must not be zero.
 
 ## Sample Input:
+```
 5 32 321 3214 0229 87
+```
 
 ## Sample Output:
+```
 22932132143287
+```

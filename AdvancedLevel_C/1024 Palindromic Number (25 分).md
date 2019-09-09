@@ -13,15 +13,23 @@ Each input file contains one test case. Each case consists of two positive numbe
 For each test case, output two numbers, one in each line. The first number is the paired palindromic number of $N$, and the second number is the number of steps taken to find the palindromic number. If the palindromic number is not found after $K$ steps, just output the number obtained at the $K$th step and $K$ instead.
 
 ## Sample Input 1:
+```
 67 3
+```
 
 ## Sample Output 1:
+```
 484
 2
+```
 
 ## Sample Input 2:
+```
 69 3
+```
 
 ## Sample Output 2:
+```
 1353
 3
+```

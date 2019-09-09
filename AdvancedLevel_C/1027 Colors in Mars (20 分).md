@@ -9,7 +9,11 @@ Each input file contains one test case which occupies a line containing the thre
 For each test case you should output the Mars RGB value in the following format: first output `#`, then followed by a 6-digit number where all the English characters must be upper-cased. If a single color is only 1-digit long, you must print a `0` to its left.
 
 ## Sample Input:
+```
 15 43 71
+```
 
 ## Sample Output:
+```
 #123456
+```

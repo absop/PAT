@@ -13,12 +13,16 @@ where the numbers are all integers no more than 500, and are separated by a spac
 For each test case, print in one line the cities along the shortest path from the starting point to the destination, followed by the total distance and the total cost of the path. The numbers must be separated by a space and there must be no extra space at the end of output.
 
 ## Sample Input:
+```
 4 5 0 3
 0 1 1 20
 1 3 2 30
 0 3 4 10
 0 2 2 20
 2 3 1 20
+```
 
 ## Sample Output:
+```
 0 2 3 3 40
+```

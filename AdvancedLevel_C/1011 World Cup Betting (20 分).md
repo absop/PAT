@@ -20,9 +20,13 @@ Each input file contains one test case. Each case contains the betting informati
 For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space.
 
 ## Sample Input:
+```
 1.1 2.5 1.7
 1.2 3.1 1.6
 4.1 1.2 1.1
+```
 
 ## Sample Output:
+```
 T T W 39.31
+```

@@ -17,8 +17,12 @@ For each test case, you are supposed to count those family members who have no c
 The sample case represents a tree with only 2 nodes, where `01` is the root and `02` is its only child. Hence on the root `01` level, there is `0` leaf node; and on the next level, there is `1` leaf node. Then we should output `0 1` in a line.
 
 ## Sample Input:
+```
 2 1
 01 1 02
+```
 
 ## Sample Output:
+```
 0 1
+```

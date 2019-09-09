@@ -13,6 +13,7 @@ Notice that the bank opens from 08:00 to 17:00. Anyone arrives early will have t
 For each test case, print in one line the average waiting time of all the customers, in minutes and accurate up to 1 decimal place.
 
 ## Sample Input:
+```
 7 3
 07:55:00 16
 17:00:01 2
@@ -21,6 +22,9 @@ For each test case, print in one line the average waiting time of all the custom
 08:00:00 30
 08:00:02 2
 08:03:00 10
+```
 
 ## Sample Output:
+```
 8.2
+```

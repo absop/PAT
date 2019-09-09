@@ -19,6 +19,7 @@ For each test case, you must print a phone bill for each customer.
 Bills must be printed in alphabetical order of customers' names. For each customer, first print in a line the name of the customer and the month of the bill in the format shown by the sample. Then for each time period of a call, print in one line the beginning and ending time and date (`dd:hh:mm`), the lasting time (in minute) and the charge of the call. The calls must be listed in chronological order. Finally, print the total charge for the month in the format shown by the sample.
 
 ## Sample Input:
+```
 10 10 10 10 10 10 20 20 20 15 15 15 15 15 15 15 20 30 20 15 15 10 10 10
 10
 CYLL 01:01:06:01 on-line
@@ -31,8 +32,10 @@ aaa 01:02:00:01 on-line
 CYLL 01:28:15:41 on-line
 aaa 01:05:02:24 on-line
 aaa 01:04:23:59 off-line
+```
 
 ## Sample Output:
+```
 CYJJ 01
 01:05:59 01:07:00 61 $12.10
 Total amount: $12.10
@@ -43,3 +46,4 @@ Total amount: $28.25
 aaa 01
 02:00:01 04:23:59 4318 $638.80
 Total amount: $638.80
+```

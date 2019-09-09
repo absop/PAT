@@ -13,6 +13,7 @@ Each input file contains one test case. For each case, the first line contains a
 For each test case, first print the arriving time, serving time and the waiting time for each pair of players in the format shown by the sample. Then print in a line the number of players served by each table. Notice that the output must be listed in chronological order of the serving time. The waiting time must be rounded up to an integer minute(s). If one cannot get a table before the closing time, their information must NOT be printed.
 
 ## Sample Input:
+```
 9
 20:52:00 10 0
 08:00:00 20 0
@@ -25,8 +26,10 @@ For each test case, first print the arriving time, serving time and the waiting 
 20:53:00 10 1
 3 1
 2
+```
 
 ## Sample Output:
+```
 08:00:00 08:00:00 0
 08:01:30 08:01:30 0
 08:02:00 08:02:00 0
@@ -36,3 +39,4 @@ For each test case, first print the arriving time, serving time and the waiting 
 20:51:00 20:51:00 0
 20:52:00 20:52:00 0
 3 3 2
+```

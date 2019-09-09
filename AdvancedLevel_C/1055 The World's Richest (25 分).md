@@ -13,6 +13,7 @@ For each query, first print in a line `Case #X:` where `X` is the query number s
 The outputs must be in non-increasing order of the net worths. In case there are equal worths, it must be in non-decreasing order of the ages. If both worths and ages are the same, then the output must be in non-decreasing alphabetical order of the names. It is guaranteed that there is no two persons share all the same of the three pieces of information. In case no one is found, output `None`.
 
 ## Sample Input:
+```
 12 4
 Zoe_Bill 35 2333
 Bob_Volk 24 5888
@@ -30,8 +31,10 @@ Nobody 5 0
 4 30 35
 4 5 95
 1 45 50
+```
 
 ## Sample Output:
+```
 Case #1:
 Alice 18 88888
 Billy 24 5888
@@ -48,3 +51,4 @@ Alice 18 88888
 Cindy 76 76000
 Case #4:
 None
+```

@@ -9,6 +9,7 @@ Each input file contains one test case. For each test case, the first line conta
 For each test case, print in one line two numbers: the number of different shortest paths between $C_​1$ and $C_​2$, and the maximum amount of rescue teams you can possibly gather. All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.
 
 ## Sample Input:
+```
 5 6 0 2
 1 2 1 5 3
 0 1 1
@@ -17,6 +18,9 @@ For each test case, print in one line two numbers: the number of different short
 1 2 1
 2 4 1
 3 4 1
+```
 
 ## Sample Output:
+```
 2 4
+```

@@ -13,6 +13,7 @@ where `Name1` and `Name2` are the names of people at the two ends of the call, a
 For each test case, first print in a line the total number of gangs. Then for each gang, print in a line the name of the head and the total number of the members. It is guaranteed that the head is unique for each gang. The output must be sorted according to the alphabetical order of the names of the heads.
 
 ## Sample Input 1:
+```
 8 59
 AAA BBB 10
 BBB AAA 20
@@ -22,13 +23,17 @@ EEE DDD 70
 FFF GGG 30
 GGG HHH 20
 HHH FFF 10
+```
 
 ## Sample Output 1:
+```
 2
 AAA 3
 GGG 3
+```
 
 ## Sample Input 2:
+```
 8 70
 AAA BBB 10
 BBB AAA 20
@@ -38,6 +43,9 @@ EEE DDD 70
 FFF GGG 30
 GGG HHH 20
 HHH FFF 10
+```
 
 ## Sample Output 2:
+```
 0
+```

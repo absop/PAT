@@ -26,6 +26,7 @@ After the book information, there is a line containing a positive integer $M (â‰
 For each query, first print the original query in a line, then output the resulting book ID's in increasing order, each occupying a line. If no book is found, print `Not Found` instead.
 
 ## Sample Input:
+```
 3
 1111111
 The Testing Book
@@ -52,8 +53,10 @@ ZUCS Print2
 4: ZUCS Print
 5: 2011
 3: blablabla
+```
 
 ## Sample Output:
+```
 1: The Testing Book
 1111111
 2222222
@@ -71,3 +74,4 @@ ZUCS Print2
 2222222
 3: blablabla
 Not Found
+```

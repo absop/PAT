@@ -11,8 +11,12 @@ Each input contains one test case. Each case contains one positive integer with 
 For each test case, first print in a line "Yes" if doubling the input number gives a number that consists of only a permutation of the digits in the original number, or "No" if not. Then in the next line, print the doubled number.
 
 ## Sample Input:
+```
 1234567899
+```
 
 ## Sample Output:
+```
 Yes
 2469135798
+```

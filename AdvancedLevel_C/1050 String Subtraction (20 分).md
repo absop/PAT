@@ -9,8 +9,12 @@ Each input file contains one test case. Each case consists of two lines which gi
 For each test case, print $S_1 - S_2$ in one line.
 
 ## Sample Input:
+```
 They are students.
 aeiou
+```
 
 ## Sample Output:
+```
 Thy r stdnts.
+```

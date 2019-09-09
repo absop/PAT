@@ -15,17 +15,21 @@ where `Address` is the address of the node in memory, `Key` is an integer in $[â
 For each test case, the output format is the same as that of the input, where $N$ is the total number of nodes in the list and all the nodes must be sorted order.
 
 ## Sample Input:
+```
 5 00001
 11111 100 -1
 00001 0 22222
 33333 100000 11111
 12345 -1 33333
 22222 1000 12345
+```
 
 ## Sample Output:
+```
 5 12345
 12345 -1 00001
 00001 0 11111
 11111 100 22222
 22222 1000 33333
 33333 100000 -1
+```

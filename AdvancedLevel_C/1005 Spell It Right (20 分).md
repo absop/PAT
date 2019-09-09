@@ -9,7 +9,11 @@ Each input file contains one test case. Each case occupies one line which contai
 For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.
 
 ##Sample Input:
+```
 12345
+```
 
 ##Sample Output:
+```
 one five
+```

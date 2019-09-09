@@ -9,6 +9,7 @@ Each input file contains one test case. For each case, the first line contains 2
 For each test case, print your results in $N$ lines. Each line corresponds to one student, in the following format: first print the student's name, then the total number of registered courses of that student, and finally the indices of the courses in increasing order. The query results must be printed in the same order as input. All the data in a line must be separated by a space, with no extra space at the end of the line.
 
 ## Sample Input:
+```
 11 5
 4 7
 BOB5 DON2 FRA8 JAY9 KAT3 LOR6 ZOE1
@@ -21,8 +22,10 @@ BOB5
 5 9
 AMY7 ANN0 BOB5 DON2 FRA8 JAY9 KAT3 LOR6 ZOE1
 ZOE1 ANN0 BOB5 JOE4 JAY9 FRA8 DON2 AMY7 KAT3 LOR6 NON9
+```
 
 ## Sample Output:
+```
 ZOE1 2 4 5
 ANN0 3 1 2 5
 BOB5 5 1 2 3 4 5
@@ -34,3 +37,4 @@ AMY7 1 5
 KAT3 3 2 4 5
 LOR6 4 1 2 4 5
 NON9 0
+```

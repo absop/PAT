@@ -9,6 +9,7 @@ Each input file contains one test case. For each case, the first line contains 4
 For each test case, print the cheapest price in a line, accurate up to 2 decimal places. It is assumed that the tank is empty at the beginning. If it is impossible to reach the destination, print `The maximum travel distance = X` where `X` is the maximum possible distance the car can run, accurate up to 2 decimal places.
 
 ## Sample Input 1:
+```
 50 1300 12 8
 6.00 1250
 7.00 600
@@ -18,14 +19,21 @@ For each test case, print the cheapest price in a line, accurate up to 2 decimal
 7.50 400
 7.30 1000
 6.85 300
+```
 
 ## Sample Output 1:
+```
 749.17
+```
 
 ## Sample Input 2:
+```
 50 1300 12 2
 7.10 0
 7.00 600
+```
 
 ## Sample Output 2:
+```
 The maximum travel distance = 1200.00
+```

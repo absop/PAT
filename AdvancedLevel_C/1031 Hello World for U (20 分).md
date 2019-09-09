@@ -19,10 +19,14 @@ Each input file contains one test case. Each case contains one string with no le
 For each test case, print the input string in the shape of U as specified in the description.
 
 ## Sample Input:
+```
 helloworld!
+```
 
 ## Sample Output:
+```
 h   !
 e   d
 l   l
 lowor
+```

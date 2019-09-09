@@ -59,7 +59,7 @@ def mktoc(dir):
     fmt = '[%s](/AdvancedLevel_C/%s)\n'
     toc = [f for f in os.listdir(advanced) if f.endswith(".md")]
     toc = [fmt % (f.rstrip(".md"), f) for f in sorted(toc)]
-    toc = "".join(toc)
+    toc = "\n".join(toc)
 
     return toc
 

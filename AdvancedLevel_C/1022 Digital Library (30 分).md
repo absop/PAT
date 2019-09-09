@@ -3,7 +3,7 @@
 A Digital Library contains millions of books, stored according to their titles, authors, key words of their abstracts, publishers, and published years. Each book is assigned an unique 7-digit number as its ID. Given any query from a reader, you are supposed to output the resulting books, sorted in increasing order of their ID's.
 
 ## Input Specification:
-Each input file contains one test case. For each case, the first line contains a positive integer $N (≤10^4)$ which is the total number of books. Then $N$ blocks follow, each contains the information of a book in 6 lines:
+Each input file contains one test case. For each case, the first line contains a positive integer $N (≤ 10^4)$ which is the total number of books. Then $N$ blocks follow, each contains the information of a book in 6 lines:
 
 Line #1: the 7-digit ID number;<br>
 Line #2: the book title -- a string of no more than 80 characters;<br>

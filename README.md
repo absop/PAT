@@ -7,51 +7,51 @@ Welcome to contribute code and star.
 
 ## Summary
 
-|标号|标题                       |分数|代码                                                                               |
-|----|---------------------------|--|-----------------------------------------------------------------------------------|
-|1001|A+B Format                 |20|[`题目描述`][README1001],[`1001.c`][1001.c]                                            |
-|1002|A+B for Polynomials        |25|[`题目描述`][README1002],[`1002.c`][1002.c]                                            |
-|1003|Emergency                  |25|[`题目描述`][README1003],[`1003.c`][1003.c]                                            |
-|1004|Counting Leaves            |30|[`题目描述`][README1004],[`1004.c`][1004.c],[`1004B.c`][1004B.c]                       |
-|1005|Spell It Right             |20|[`题目描述`][README1005],[`1005.c`][1005.c]                                            |
-|1006|Sign In and Sign Out       |25|[`题目描述`][README1006],[`1006.c`][1006.c]                                            |
-|1007|Maximum Subsequence Sum    |25|[`题目描述`][README1007],[`1007.c`][1007.c]                                            |
-|1008|Elevator                   |20|[`题目描述`][README1008],[`1008.c`][1008.c]                                            |
-|1009|Product of Polynomials     |25|[`题目描述`][README1009],[`1009.c`][1009.c]                                            |
-|1010|Radix                      |25|[`题目描述`][README1010],[`1010.c`][1010.c]                                            |
-|1011|World Cup Betting          |20|[`题目描述`][README1011],[`1011.c`][1011.c]                                            |
-|1012|The Best Rank              |25|[`题目描述`][README1012],[`1012.c`][1012.c]                                            |
-|1013|Battle Over Cities         |25|[`题目描述`][README1013],[`1013.c`][1013.c],[`1013B.c`][1013B.c]                       |
-|1014|Waiting in Line            |30|[`题目描述`][README1014],[`1014.c`][1014.c]                                            |
-|1015|Reversible Primes          |20|[`题目描述`][README1015],[`1015.c`][1015.c]                                            |
-|1016|Phone Bills                |25|[`题目描述`][README1016],[`1016.c`][1016.c],[`1016.py`][1016.py]                       |
-|1017|Queueing at Bank           |25|[`题目描述`][README1017],[`1017.c`][1017.c]                                            |
+|标号|标题                         |分数|代码|
+|---|---------------------------|---|---|
+|1001|A+B Format                 |20|[`题目描述`][README1001],[`1001.c`][1001.c]|
+|1002|A+B for Polynomials        |25|[`题目描述`][README1002],[`1002.c`][1002.c]|
+|1003|Emergency                  |25|[`题目描述`][README1003],[`1003.c`][1003.c]|
+|1004|Counting Leaves            |30|[`题目描述`][README1004],[`1004.c`][1004.c],[`1004B.c`][1004B.c]|
+|1005|Spell It Right             |20|[`题目描述`][README1005],[`1005.c`][1005.c]|
+|1006|Sign In and Sign Out       |25|[`题目描述`][README1006],[`1006.c`][1006.c]|
+|1007|Maximum Subsequence Sum    |25|[`题目描述`][README1007],[`1007.c`][1007.c]|
+|1008|Elevator                   |20|[`题目描述`][README1008],[`1008.c`][1008.c]|
+|1009|Product of Polynomials     |25|[`题目描述`][README1009],[`1009.c`][1009.c]|
+|1010|Radix                      |25|[`题目描述`][README1010],[`1010.c`][1010.c]|
+|1011|World Cup Betting          |20|[`题目描述`][README1011],[`1011.c`][1011.c]|
+|1012|The Best Rank              |25|[`题目描述`][README1012],[`1012.c`][1012.c]|
+|1013|Battle Over Cities         |25|[`题目描述`][README1013],[`1013.c`][1013.c],[`1013B.c`][1013B.c]|
+|1014|Waiting in Line            |30|[`题目描述`][README1014],[`1014.c`][1014.c]|
+|1015|Reversible Primes          |20|[`题目描述`][README1015],[`1015.c`][1015.c]|
+|1016|Phone Bills                |25|[`题目描述`][README1016],[`1016.c`][1016.c],[`1016.py`][1016.py]|
+|1017|Queueing at Bank           |25|[`题目描述`][README1017],[`1017.c`][1017.c]|
 |1018|Public Bike Management     |30|[`题目描述`][README1018],[`1018.c`][1018.c],[`1018.c++`][1018.c++],[`1018.py`][1018.py]|
-|1019|General Palindromic Number |20|[`题目描述`][README1019],[`1019.c`][1019.c]                                            |
-|1020|Tree Traversals            |25|[`题目描述`][README1020],[`1020.c`][1020.c]                                            |
-|1021|Deepest Root               |25|[`题目描述`][README1021],[`1021.c`][1021.c]                                            |
-|1022|Digital Library            |30|[`题目描述`][README1022],[`1022.c`][1022.c],[`1022.py`][1022.py]                       |
-|1023|Have Fun with Numbers      |20|[`题目描述`][README1023],[`1023.c`][1023.c],[`1023.py`][1023.py]                       |
-|1024|Palindromic Number         |25|[`题目描述`][README1024],[`1024.c`][1024.c]                                            |
-|1025|PAT Ranking                |25|[`题目描述`][README1025],[`1025.c`][1025.c]                                            |
-|1026|Table Tennis               |30|[`题目描述`][README1026],[`1026.c`][1026.c]                                            |
-|1027|Colors in Mars             |20|[`题目描述`][README1027],[`1027.c`][1027.c]                                            |
-|1028|List Sorting               |25|[`题目描述`][README1028],[`1028.c`][1028.c]                                            |
-|1029|Median                     |25|[`题目描述`][README1029],[`1029.c`][1029.c]                                            |
+|1019|General Palindromic Number |20|[`题目描述`][README1019],[`1019.c`][1019.c]|
+|1020|Tree Traversals            |25|[`题目描述`][README1020],[`1020.c`][1020.c]|
+|1021|Deepest Root               |25|[`题目描述`][README1021],[`1021.c`][1021.c]|
+|1022|Digital Library            |30|[`题目描述`][README1022],[`1022.c`][1022.c],[`1022.py`][1022.py]|
+|1023|Have Fun with Numbers      |20|[`题目描述`][README1023],[`1023.c`][1023.c],[`1023.py`][1023.py]|
+|1024|Palindromic Number         |25|[`题目描述`][README1024],[`1024.c`][1024.c]|
+|1025|PAT Ranking                |25|[`题目描述`][README1025],[`1025.c`][1025.c]|
+|1026|Table Tennis               |30|[`题目描述`][README1026],[`1026.c`][1026.c]|
+|1027|Colors in Mars             |20|[`题目描述`][README1027],[`1027.c`][1027.c]|
+|1028|List Sorting               |25|[`题目描述`][README1028],[`1028.c`][1028.c]|
+|1029|Median                     |25|[`题目描述`][README1029],[`1029.c`][1029.c]|
 |1030|Travel Plan                |30|[`题目描述`][README1030],[`1030.c`][1030.c],[`1030.c++`][1030.c++],[`1030.py`][1030.py]|
-|1031|Hello World for U          |20|[`题目描述`][README1031],[`1031.c`][1031.c]                                            |
-|1032|Sharing                    |25|[`题目描述`][README1032],[`1032.c`][1032.c]                                            |
-|1033|To Fill or Not to Fill     |25|[`题目描述`][README1033],[`1033.c`][1033.c]                                            |
-|1034|Head of a Gang             |30|[`题目描述`][README1034],[`1034.c`][1034.c],[`1034B.c`][1034B.c]                       |
-|1035|Password                   |20|[`题目描述`][README1035],[`1035.c`][1035.c]                                            |
-|1036|Boys vs Girls              |25|[`题目描述`][README1036],[`1036.c`][1036.c]                                            |
-|1037|Magic Coupon               |25|[`题目描述`][README1037],[`1037.c`][1037.c]                                            |
-|1038|Recover the Smallest Number|30|[`题目描述`][README1038],[`1038.c`][1038.c]                                            |
-|1039|Course List for Student    |25|[`题目描述`][README1039],[`1039.c`][1039.c]                                            |
-|1040|Longest Symmetric String   |25|[`题目描述`][README1040],[`1040.c`][1040.c]                                            |
-|1050|String Subtraction         |20|[`题目描述`][README1050],[`1050.c`][1050.c]                                            |
-|1052|Linked List Sorting        |25|[`题目描述`][README1052],[`1052.c`][1052.c]                                            |
-|1055|The World's Richest        |25|[`题目描述`][README1055],[`1055.c`][1055.c]                                            |
+|1031|Hello World for U          |20|[`题目描述`][README1031],[`1031.c`][1031.c]|
+|1032|Sharing                    |25|[`题目描述`][README1032],[`1032.c`][1032.c]|
+|1033|To Fill or Not to Fill     |25|[`题目描述`][README1033],[`1033.c`][1033.c]|
+|1034|Head of a Gang             |30|[`题目描述`][README1034],[`1034.c`][1034.c],[`1034B.c`][1034B.c]|
+|1035|Password                   |20|[`题目描述`][README1035],[`1035.c`][1035.c]|
+|1036|Boys vs Girls              |25|[`题目描述`][README1036],[`1036.c`][1036.c]|
+|1037|Magic Coupon               |25|[`题目描述`][README1037],[`1037.c`][1037.c]|
+|1038|Recover the Smallest Number|30|[`题目描述`][README1038],[`1038.c`][1038.c]|
+|1039|Course List for Student    |25|[`题目描述`][README1039],[`1039.c`][1039.c]|
+|1040|Longest Symmetric String   |25|[`题目描述`][README1040],[`1040.c`][1040.c]|
+|1050|String Subtraction         |20|[`题目描述`][README1050],[`1050.c`][1050.c]|
+|1052|Linked List Sorting        |25|[`题目描述`][README1052],[`1052.c`][1052.c]|
+|1055|The World's Richest        |25|[`题目描述`][README1055],[`1055.c`][1055.c]|
 
 
 

@@ -92,12 +92,9 @@ def maketable(dir):
     footnotes = "\n".join(footnotes)
 
     len2 = max([len(v[0]) for v in exercises.values()])
-    len4 = max([len(v[2]) for v in exercises.values()])
-    len1, len3 = len2 - 2, len4 - 2
-    rowfmt = "|%s|%-" + str(len1) + "s|%s|%-" + str(len3) + "s|\n"
+    rowfmt = "|%s|%-" + str(len2) + "s|%s|%s|\n"
     table = rowfmt % ("标号", "标题", "分数", "代码")
-    rowfmt = "|%s|%-" + str(len2) + "s|%s|%-" + str(len4) + "s|\n"
-    table += rowfmt % (4 * "-", len2 * "-", 2 * "-", len4 * "-")
+    table += rowfmt % ("---", len2 * "-", "---", "---")
     for idnum in exercises:
         title, score, src = exercises[idnum]
         table += rowfmt % (idnum, title, score, src)

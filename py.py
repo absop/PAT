@@ -63,29 +63,26 @@ def maketable(dir):
         "c++": "Cpp", "cpp": "Cpp",
         "py": "Python"
     }
-    exercises, source = {}, []
+    exercises, source, footnotes = {}, [], []
     for file in sorted(os.listdir(advanced)):
-        if file[:4].isdigit() and file.endswith(".md"):
-            exercises[file[:4]] = [file[5:-10], file[-8:-6], []]
-            source.append(file)
+        idnum = file[:4]
+        if idnum.isdigit() and file.endswith(".md"):
+            ident = "README" + idnum
+            readme = linkfmt % (file[5:-10], ident)
+            link = file.replace(" ", "%20")
+            footnotes.append("[%s]: AdvancedLevel_C/%s" % (ident, link))
+            exercises[idnum] = [readme, file[-8:-6], []]
+
         else:
             ext = os.path.splitext(file)[1].lstrip(".").lower()
             if ext in language:
                 source.append(file)
 
-    footnotes = []
     for file in source:
         idnum = file[:4]
         if idnum in exercises:
-            if file.endswith(".md"):
-                ident = "README" + idnum
-                display = "题目描述"
-            else:
-                ident = file
-                display = file
-            file = file.replace(" ", "%20")
-            exercises[idnum][2].append(linkfmt % (display, ident))
-            footnotes.append("[%s]: AdvancedLevel_C/%s" % (ident, file))
+            exercises[idnum][2].append(linkfmt % (file, file))
+            footnotes.append("[%s]: AdvancedLevel_C/%s" % (file, file))
 
     for idnum in exercises:
         exercises[idnum][2] = ",".join(exercises[idnum][2])

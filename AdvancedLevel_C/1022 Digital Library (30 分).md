@@ -14,7 +14,7 @@ Line #6: the published year -- a 4-digit number which is in the range [1000, 300
 
 It is assumed that each book belongs to one author only, and contains no more than 5 key words; there are no more than 1000 distinct key words in total; and there are no more than 1000 distinct publishers.
 
-After the book information, there is a line containing a positive integer $M (≤1000)$ which is the number of user's search queries. Then $M$ lines follow, each in one of the formats shown below:
+After the book information, there is a line containing a positive integer $M (≤ 1000)$ which is the number of user's search queries. Then $M$ lines follow, each in one of the formats shown below:
 
 1: a book title<br>
 2: name of an author<br>

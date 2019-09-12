@@ -31,7 +31,7 @@
 |1019|[`General Palindromic Number`][README1019] |20|[`1019.c`][1019.c]|
 |1020|[`Tree Traversals`][README1020]            |25|[`1020.c`][1020.c]|
 |1021|[`Deepest Root`][README1021]               |25|[`1021.c`][1021.c]|
-|1022|[`Digital Library`][README1022]            |30|[`1022.c`][1022.c],[`1022.py`][1022.py]|
+|1022|[`Digital Library`][README1022]            |30|[`1022.c`][1022.c],[`1022.c++`][1022.c++],[`1022.py`][1022.py],[`1022B.c`][1022B.c]|
 |1023|[`Have Fun with Numbers`][README1023]      |20|[`1023.c`][1023.c],[`1023.py`][1023.py]|
 |1024|[`Palindromic Number`][README1024]         |25|[`1024.c`][1024.c]|
 |1025|[`PAT Ranking`][README1025]                |25|[`1025.c`][1025.c]|
@@ -130,7 +130,9 @@ Welcome to contribute code and star.
 [1020.c]: AdvancedLevel_C/1020.c
 [1021.c]: AdvancedLevel_C/1021.c
 [1022.c]: AdvancedLevel_C/1022.c
+[1022.c++]: AdvancedLevel_C/1022.c++
 [1022.py]: AdvancedLevel_C/1022.py
+[1022B.c]: AdvancedLevel_C/1022B.c
 [1023.c]: AdvancedLevel_C/1023.c
 [1023.py]: AdvancedLevel_C/1023.py
 [1024.c]: AdvancedLevel_C/1024.c

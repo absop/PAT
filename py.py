@@ -116,4 +116,4 @@ if __name__ == "__main__":
     makereadme(os.path.dirname(__file__))
     # isolate(os.path.dirname(__file__))
     # merge(os.path.dirname(__file__))
-    # clean(os.path.dirname(__file__))
+    clean(os.path.dirname(__file__))

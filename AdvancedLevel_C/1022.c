@@ -38,7 +38,7 @@ void storebook(int ith, char *key, int len, int id)
     }
     if (p == NULL) {
         p = malloc(sizeof(bucket_t));
-        *p = (bucket_t){key, len, 0, 0, 0, *pp};
+        *p = (bucket_t) {key, len, 0, 0, 0, *pp};
         *pp = p;
     }
     len = p->end - p->begin;
@@ -64,21 +64,20 @@ void readbook()
     static char *key, lines[5][96];
 
     scanf("%d\n", &id);
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < 5; ++i) {
         gets(lines[i]);
+        if (i != 2) {
+            len = strlen(lines[i]);
+            key = strndup1(lines[i], len);
+            storebook(i, key, len, id);
+        }
+    }
     for (char *p = lines[2], *q = p; *p; ++q) {
         if (*q == ' ' || *q == 0) {
             len = q - p;
             key = strndup1(p, len);
             storebook(2, key, len, id);
             p = q + (*q == ' ');
-        }
-    }
-    for (int i = 0; i < 5; ++i) {
-        if (i != 2) {
-            len = strlen(lines[i]);
-            key = strndup1(lines[i], len);
-            storebook(i, key, len, id);
         }
     }
 }

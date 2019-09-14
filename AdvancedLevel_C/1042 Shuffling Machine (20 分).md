@@ -1,4 +1,4 @@
-## 1042 Shuffling Machine (20 分)
+# 1042 Shuffling Machine (20 分)
 
 Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid "inside jobs" where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.
 

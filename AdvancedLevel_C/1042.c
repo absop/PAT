@@ -9,9 +9,9 @@ int main()
     const char *fmts[2] = { "%c%d", " %c%d" };
     scanf("%d", &K);
     for (int i = 0; i < 54; ++i) {
-        cards[i] = i;
         scanf("%d", &tobe[i]);
         tobe[i] -= 1;
+        cards[i] = i;
     }
     for (int i = 0; i < K; ++i) {
         memcpy(backup, cards, 54 * sizeof (int));

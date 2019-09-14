@@ -51,6 +51,8 @@
 |1039|[`Course List for Student`][README1039]    |25|[`1039.c`][1039.c]|
 |1040|[`Longest Symmetric String`][README1040]   |25|[`1040.c`][1040.c]|
 |1041|[`Be Unique`][README1041]                  |20|[`1041.c`][1041.c]|
+|1042|[`Shuffling Machine`][README1042]          |20|[`1042.c`][1042.c]|
+|1043|[`Is It a Binary Search Tree`][README1043] |25|[`1043.c`][1043.c]|
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
@@ -100,6 +102,8 @@ Welcome to contribute code and star.
 [README1039]: AdvancedLevel_C/1039%20Course%20List%20for%20Student%20(25%20分).md
 [README1040]: AdvancedLevel_C/1040%20Longest%20Symmetric%20String%20(25%20分).md
 [README1041]: AdvancedLevel_C/1041%20Be%20Unique%20(20%20分).md
+[README1042]: AdvancedLevel_C/1042%20Shuffling%20Machine%20(20%20分).md
+[README1043]: AdvancedLevel_C/1043%20Is%20It%20a%20Binary%20Search%20Tree%20(25%20分).md
 [README1050]: AdvancedLevel_C/1050%20String%20Subtraction%20(20%20分).md
 [README1052]: AdvancedLevel_C/1052%20Linked%20List%20Sorting%20(25%20分).md
 [README1055]: AdvancedLevel_C/1055%20The%20World's%20Richest%20(25%20分).md
@@ -156,6 +160,8 @@ Welcome to contribute code and star.
 [1039.c]: AdvancedLevel_C/1039.c
 [1040.c]: AdvancedLevel_C/1040.c
 [1041.c]: AdvancedLevel_C/1041.c
+[1042.c]: AdvancedLevel_C/1042.c
+[1043.c]: AdvancedLevel_C/1043.c
 [1050.c]: AdvancedLevel_C/1050.c
 [1052.c]: AdvancedLevel_C/1052.c
 [1055.c]: AdvancedLevel_C/1055.c

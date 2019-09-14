@@ -53,8 +53,17 @@
 |1041|[`Be Unique`][README1041]                  |20|[`1041.c`][1041.c]|
 |1042|[`Shuffling Machine`][README1042]          |20|[`1042.c`][1042.c]|
 |1043|[`Is It a Binary Search Tree`][README1043] |25|[`1043.c`][1043.c]|
+|1044|[`Shopping in Mars`][README1044]           |25||
+|1045|[`Favorite Color Stripe`][README1045]      |30||
+|1046|[`Shortest Distance`][README1046]          |20||
+|1047|[`Student List for Course`][README1047]    |25||
+|1048|[`Find Coins`][README1048]                 |25||
+|1049|[`Counting Ones`][README1049]              |30||
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
+|1051|[`Pop Sequence`][README1051]               |25||
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
+|1053|[`Path of Equal Weight`][README1053]       |30||
+|1054|[`The Dominant Color`][README1054]         |20||
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
 
 
@@ -104,8 +113,17 @@ Welcome to contribute code and star.
 [README1041]: AdvancedLevel_C/1041%20Be%20Unique%20(20%20分).md
 [README1042]: AdvancedLevel_C/1042%20Shuffling%20Machine%20(20%20分).md
 [README1043]: AdvancedLevel_C/1043%20Is%20It%20a%20Binary%20Search%20Tree%20(25%20分).md
+[README1044]: AdvancedLevel_C/1044%20Shopping%20in%20Mars%20(25%20分).md
+[README1045]: AdvancedLevel_C/1045%20Favorite%20Color%20Stripe%20(30%20分).md
+[README1046]: AdvancedLevel_C/1046%20Shortest%20Distance%20(20%20分).md
+[README1047]: AdvancedLevel_C/1047%20Student%20List%20for%20Course%20(25%20分).md
+[README1048]: AdvancedLevel_C/1048%20Find%20Coins%20(25%20分).md
+[README1049]: AdvancedLevel_C/1049%20Counting%20Ones%20(30%20分).md
 [README1050]: AdvancedLevel_C/1050%20String%20Subtraction%20(20%20分).md
+[README1051]: AdvancedLevel_C/1051%20Pop%20Sequence%20(25%20分).md
 [README1052]: AdvancedLevel_C/1052%20Linked%20List%20Sorting%20(25%20分).md
+[README1053]: AdvancedLevel_C/1053%20Path%20of%20Equal%20Weight%20(30%20分).md
+[README1054]: AdvancedLevel_C/1054%20The%20Dominant%20Color%20(20%20分).md
 [README1055]: AdvancedLevel_C/1055%20The%20World's%20Richest%20(25%20分).md
 [1001.c]: AdvancedLevel_C/1001.c
 [1002.c]: AdvancedLevel_C/1002.c

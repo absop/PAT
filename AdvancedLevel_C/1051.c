@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-int stack[1000], v[1000];
 
 int main()
 {
     int M, N, K;
+    int stack[1000], v[1000];
     scanf("%d %d %d", &M, &N, &K);
     for (int i = 0; i < K; ++i) {
         for (int j = 0; j < N; ++j)

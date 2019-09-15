@@ -60,7 +60,7 @@
 |1048|[`Find Coins`][README1048]                 |25|[`1048.c`][1048.c],[`1048B.c`][1048B.c]|
 |1049|[`Counting Ones`][README1049]              |30|[`1049.c`][1049.c]|
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
-|1051|[`Pop Sequence`][README1051]               |25||
+|1051|[`Pop Sequence`][README1051]               |25|[`1051.c`][1051.c]|
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
 |1053|[`Path of Equal Weight`][README1053]       |30||
 |1054|[`The Dominant Color`][README1054]         |20||
@@ -190,5 +190,6 @@ Welcome to contribute code and star.
 [1048B.c]: AdvancedLevel_C/1048B.c
 [1049.c]: AdvancedLevel_C/1049.c
 [1050.c]: AdvancedLevel_C/1050.c
+[1051.c]: AdvancedLevel_C/1051.c
 [1052.c]: AdvancedLevel_C/1052.c
 [1055.c]: AdvancedLevel_C/1055.c

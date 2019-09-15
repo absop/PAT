@@ -53,12 +53,12 @@
 |1041|[`Be Unique`][README1041]                  |20|[`1041.c`][1041.c]|
 |1042|[`Shuffling Machine`][README1042]          |20|[`1042.c`][1042.c]|
 |1043|[`Is It a Binary Search Tree`][README1043] |25|[`1043.c`][1043.c]|
-|1044|[`Shopping in Mars`][README1044]           |25||
-|1045|[`Favorite Color Stripe`][README1045]      |30||
-|1046|[`Shortest Distance`][README1046]          |20||
-|1047|[`Student List for Course`][README1047]    |25||
-|1048|[`Find Coins`][README1048]                 |25||
-|1049|[`Counting Ones`][README1049]              |30||
+|1044|[`Shopping in Mars`][README1044]           |25|[`1044.c`][1044.c]|
+|1045|[`Favorite Color Stripe`][README1045]      |30|[`1045.c`][1045.c],[`1045B.c`][1045B.c]|
+|1046|[`Shortest Distance`][README1046]          |20|[`1046.c`][1046.c]|
+|1047|[`Student List for Course`][README1047]    |25|[`1047.c`][1047.c],[`1047B.c`][1047B.c]|
+|1048|[`Find Coins`][README1048]                 |25|[`1048.c`][1048.c]|
+|1049|[`Counting Ones`][README1049]              |30|[`1049.c`][1049.c]|
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
 |1051|[`Pop Sequence`][README1051]               |25||
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
@@ -180,6 +180,14 @@ Welcome to contribute code and star.
 [1041.c]: AdvancedLevel_C/1041.c
 [1042.c]: AdvancedLevel_C/1042.c
 [1043.c]: AdvancedLevel_C/1043.c
+[1044.c]: AdvancedLevel_C/1044.c
+[1045.c]: AdvancedLevel_C/1045.c
+[1045B.c]: AdvancedLevel_C/1045B.c
+[1046.c]: AdvancedLevel_C/1046.c
+[1047.c]: AdvancedLevel_C/1047.c
+[1047B.c]: AdvancedLevel_C/1047B.c
+[1048.c]: AdvancedLevel_C/1048.c
+[1049.c]: AdvancedLevel_C/1049.c
 [1050.c]: AdvancedLevel_C/1050.c
 [1052.c]: AdvancedLevel_C/1052.c
 [1055.c]: AdvancedLevel_C/1055.c

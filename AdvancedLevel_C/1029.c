@@ -14,7 +14,7 @@ int A[200001];
 
 int main()
 {
-    int m, n, mid, x;
+    int m, n, x;
 
     m = getint();
     for (int i = 0; i < m; i++)
@@ -22,7 +22,7 @@ int main()
     A[m] = INT_MAX;
 
     n = getint(), x = getint();
-    mid = (m + n + 1) / 2;
+    int mid = (m + n + 1) / 2;
     int median, j = 0, rq = 1;
     for (int i = 0; i < mid; i++) {
         if (A[j] <= x)

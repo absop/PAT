@@ -62,8 +62,8 @@
 |1050|[`String Subtraction`][README1050]         |20|[`1050.c`][1050.c]|
 |1051|[`Pop Sequence`][README1051]               |25|[`1051.c`][1051.c]|
 |1052|[`Linked List Sorting`][README1052]        |25|[`1052.c`][1052.c]|
-|1053|[`Path of Equal Weight`][README1053]       |30||
-|1054|[`The Dominant Color`][README1054]         |20||
+|1053|[`Path of Equal Weight`][README1053]       |30|[`1053.c`][1053.c],[`1053B.c`][1053B.c]|
+|1054|[`The Dominant Color`][README1054]         |20|[`1054.c`][1054.c],[`1054B.c`][1054B.c]|
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
 
 
@@ -192,4 +192,8 @@ Welcome to contribute code and star.
 [1050.c]: AdvancedLevel_C/1050.c
 [1051.c]: AdvancedLevel_C/1051.c
 [1052.c]: AdvancedLevel_C/1052.c
+[1053.c]: AdvancedLevel_C/1053.c
+[1053B.c]: AdvancedLevel_C/1053B.c
+[1054.c]: AdvancedLevel_C/1054.c
+[1054B.c]: AdvancedLevel_C/1054B.c
 [1055.c]: AdvancedLevel_C/1055.c

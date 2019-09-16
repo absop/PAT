@@ -22,14 +22,14 @@ The last line contains $Q$ positive integers, which represent the customers who 
 ## Output Specification:
 For each of the $Q$ customers, print in one line the time at which his/her transaction is finished, in the format `HH:MM` where `HH` is in [08, 17] and `MM` is in [00, 59]. Note that since the bank is closed everyday after 17:00, for those customers who cannot be served before 17:00, you must output `Sorry` instead.
 
-##Sample Input:
+## Sample Input:
 ```
 2 2 7 5
 1 2 6 4 3 534 2
 3 4 5 6 7
 ```
 
-##Sample Output:
+## Sample Output:
 ```
 08:07
 08:06

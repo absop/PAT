@@ -120,7 +120,7 @@ def makereadme(dir):
     summary, footnotes = makesummary("BasicLevel_C")
     text = README_TEMPLATE.format(
         level_goto_caption="PAT (Advanced Level) Practice",
-        level_goto_link="README.md",
+        level_goto_link="/",
         level_this_caption="PAT (Basic Level) Practice （中文）",
         summary=summary,
         footnotes=footnotes)

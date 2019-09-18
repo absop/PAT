@@ -1,7 +1,7 @@
 
 # 浙江大学 PAT 题解
 
-[PAT (Advanced Level) Practice](https://github.com/absop/PAT)
+[PAT (Advanced Level) Practice](./)
 
 ## PAT (Basic Level) Practice （中文）
 

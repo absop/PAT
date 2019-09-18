@@ -5,8 +5,9 @@
 
 每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
 
-
+[PAT (Basic Level) Practice （中文）](BasicLevel.md)
 ## Summary
+PAT (Advanced Level) Practice
 
 |标号|标题                                         |分数|代码|
 |---|-------------------------------------------|---|---|
@@ -65,6 +66,11 @@
 |1053|[`Path of Equal Weight`][README1053]       |30|[`1053.c`][1053.c],[`1053B.c`][1053B.c]|
 |1054|[`The Dominant Color`][README1054]         |20|[`1054.c`][1054.c],[`1054B.c`][1054B.c]|
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
+|1056|[`Mice and Rice`][README1056]              |25|[`1056.c`][1056.c]|
+|1057|[`Stack`][README1057]                      |30||
+|1058|[`A+B in Hogwarts`][README1058]            |20||
+|1059|[`Prime Factors`][README1059]              |25||
+|1060|[`Are They Equal`][README1060]             |25||
 
 
 Welcome to contribute code and star.
@@ -125,6 +131,11 @@ Welcome to contribute code and star.
 [README1053]: AdvancedLevel_C/1053%20Path%20of%20Equal%20Weight%20(30%20分).md
 [README1054]: AdvancedLevel_C/1054%20The%20Dominant%20Color%20(20%20分).md
 [README1055]: AdvancedLevel_C/1055%20The%20World's%20Richest%20(25%20分).md
+[README1056]: AdvancedLevel_C/1056%20Mice%20and%20Rice%20(25%20分).md
+[README1057]: AdvancedLevel_C/1057%20Stack%20(30%20分).md
+[README1058]: AdvancedLevel_C/1058%20A+B%20in%20Hogwarts%20(20%20分).md
+[README1059]: AdvancedLevel_C/1059%20Prime%20Factors%20(25%20分).md
+[README1060]: AdvancedLevel_C/1060%20Are%20They%20Equal%20(25%20分).md
 [1001.c]: AdvancedLevel_C/1001.c
 [1002.c]: AdvancedLevel_C/1002.c
 [1003.c]: AdvancedLevel_C/1003.c
@@ -197,3 +208,4 @@ Welcome to contribute code and star.
 [1054.c]: AdvancedLevel_C/1054.c
 [1054B.c]: AdvancedLevel_C/1054B.c
 [1055.c]: AdvancedLevel_C/1055.c
+[1056.c]: AdvancedLevel_C/1056.c

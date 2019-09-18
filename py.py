@@ -9,8 +9,9 @@ README_TEMPLATE = """
 
 每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
 
-
+[{level_goto_caption}]({level_goto_link})
 ## Summary
+{level_this_caption}
 
 {summary}
 
@@ -32,37 +33,36 @@ def clean(dir):
         elif os.path.isdir(path):
             clean(path)
 
-def isolate(dir):
-    advanced = os.path.join("AdvancedLevel_C")
-    for file in os.listdir(advanced):
-        src0 = os.path.join(advanced, file)
+def isolate(level):
+    level_dir = os.path.join(level)
+    for file in os.listdir(level_dir):
+        src0 = os.path.join(level_dir, file)
         if os.path.isdir(src0):
             readme = os.path.join(src0, file + ".md")
             if not os.path.exists(readme):
                 with open(readme, "w+") as f:
                     f.write("#")
             continue
-        dir0 = os.path.join(advanced, file[:4])
+        dir0 = os.path.join(level_dir, file[:4])
         dest = os.path.join(dir0, file)
         os.makedirs(dir0, exist_ok=True)
         shutil.move(src0, dest)
 
-def merge(dir):
-    advanced = os.path.join("AdvancedLevel_C")
-    for file in os.listdir(advanced):
-        dir0 = os.path.join(advanced, file)
+def merge(level):
+    level_dir = os.path.join(level)
+    for file in os.listdir(level_dir):
+        dir0 = os.path.join(level_dir, file)
         if os.path.isdir(dir0):
             for f in os.listdir(dir0):
                 src0 = os.path.join(dir0, f)
-                dest = os.path.join(advanced, f)
+                dest = os.path.join(level_dir, f)
                 shutil.move(src0, dest)
             shutil.rmtree(dir0, True)
             print("%s removed"%dir0)
 
-
-def makesummary(dir):
-    advanced = os.path.join("AdvancedLevel_C")
-    footnotefmt = "[%s]: AdvancedLevel_C/%s"
+def makesummary(level):
+    level_dir = os.path.join(level)
+    footnotefmt = "[%s]: "+ level + "/%s"
     linkfmt = "[`%s`][%s]"
     language = {
         "md": "Markdown", "c": "C",
@@ -70,7 +70,7 @@ def makesummary(dir):
         "py": "Python"
     }
     exercises, source, footnotes = {}, [], []
-    for file in sorted(os.listdir(advanced)):
+    for file in sorted(os.listdir(level_dir)):
         idnum = file[:4]
         if idnum.isdigit() and file.endswith(".md"):
             ident = "README" + idnum
@@ -106,10 +106,26 @@ def makesummary(dir):
 
 
 def makereadme(dir):
-    summary, footnotes = makesummary(dir)
-    text = README_TEMPLATE.format(summary=summary, footnotes=footnotes)
-    with open("README.md", "w+", encoding="utf-8") as readme:
-        readme.write(text)
+    # Advanced Level
+    summary, footnotes = makesummary("AdvancedLevel_C")
+    text = README_TEMPLATE.format(
+        level_goto_caption="PAT (Basic Level) Practice （中文）",
+        level_goto_link="BasicLevel.md",
+        level_this_caption="PAT (Advanced Level) Practice",
+        summary=summary,
+        footnotes=footnotes)
+    with open("README.md", "w+", encoding="utf-8") as file:
+        file.write(text)
+    # Basic Level
+    summary, footnotes = makesummary("BasicLevel_C")
+    text = README_TEMPLATE.format(
+        level_goto_caption="PAT (Advanced Level) Practice",
+        level_goto_link="README.md",
+        level_this_caption="PAT (Basic Level) Practice （中文）",
+        summary=summary,
+        footnotes=footnotes)
+    with open("BasicLevel.md", "w+", encoding="utf-8") as file:
+        file.write(text)
 
 
 if __name__ == "__main__":

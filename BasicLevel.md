@@ -1,12 +1,11 @@
 
-# PAT (Basic Level) Practice （中文）
+# 浙江大学 PAT 题解
+
 [PAT (Advanced Level) Practice](https://github.com/absop/PAT)
 
-`AdvancedLevel_C`目录下绝大部分题目使用`C语言`解答，少部分题目除C外还有`Python`或`C++`的解法，代码力求精简，格式规范统一，欢迎改进意见。
+## PAT (Basic Level) Practice （中文）
 
-每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
-
-## Summary
+### Summary
 
 |标号|标题                             |分数|代码|
 |---|-------------------------------|---|---|

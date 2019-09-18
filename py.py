@@ -2,15 +2,20 @@ import os
 import shutil
 
 
-README_TEMPLATE = """
-# {level_this_caption}
-[{level_goto_caption}]({level_goto_link})
-
+about_this_repository = """
 `AdvancedLevel_C`目录下绝大部分题目使用`C语言`解答，少部分题目除C外还有`Python`或`C++`的解法，代码力求精简，格式规范统一，欢迎改进意见。
 
 每道题都有相应的`Markdown`格式的题目描述，主要是为了方便在本地测试代码，与`Github`的Markdown格式或许有所出入，另外由于`Github`的`Markdown`不支持`LaTeX`数学公式，题目中的数学公式会显示异常。
+"""
 
-## Summary
+README_TEMPLATE = """
+# 浙江大学 PAT 题解
+{about_this_repository}
+[{level_goto_caption}]({level_goto_link})
+
+## {level_this_caption}
+
+### Summary
 
 {summary}
 
@@ -108,6 +113,7 @@ def makereadme(dir):
     # Advanced Level
     summary, footnotes = makesummary("AdvancedLevel_C")
     text = README_TEMPLATE.format(
+        about_this_repository=about_this_repository,
         level_goto_caption="PAT (Basic Level) Practice （中文）",
         level_goto_link="BasicLevel.md",
         level_this_caption="PAT (Advanced Level) Practice",
@@ -118,6 +124,7 @@ def makereadme(dir):
     # Basic Level
     summary, footnotes = makesummary("BasicLevel_C")
     text = README_TEMPLATE.format(
+        about_this_repository="",
         level_goto_caption="PAT (Advanced Level) Practice",
         level_goto_link="https://github.com/absop/PAT",
         level_this_caption="PAT (Basic Level) Practice （中文）",

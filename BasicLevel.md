@@ -1,7 +1,7 @@
 
 # 浙江大学 PAT 题解
 
-[PAT (Advanced Level) Practice](./)
+[PAT (Advanced Level) Practice](README.md)
 
 ## PAT (Basic Level) Practice （中文）
 

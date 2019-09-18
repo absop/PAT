@@ -126,7 +126,7 @@ def makereadme(dir):
     text = README_TEMPLATE.format(
         about_this_repository="",
         level_goto_caption="PAT (Advanced Level) Practice",
-        level_goto_link="https://github.com/absop/PAT",
+        level_goto_link="README.md",
         level_this_caption="PAT (Basic Level) Practice （中文）",
         summary=summary,
         footnotes=footnotes)

@@ -1,7 +1,6 @@
 
-# 浙江大学 PAT 题解
-[READ MORE PAT (Advanced Level) Practice](https://github.com/absop/PAT)
-PAT (Basic Level) Practice （中文）
+# PAT (Basic Level) Practice （中文）
+[PAT (Advanced Level) Practice](https://github.com/absop/PAT)
 
 `AdvancedLevel_C`目录下绝大部分题目使用`C语言`解答，少部分题目除C外还有`Python`或`C++`的解法，代码力求精简，格式规范统一，欢迎改进意见。
 

@@ -10,7 +10,7 @@ int main()
     for (char *p; p = strstr(s1, s2); ) {
         for (; *p = *(p + len); ++p);
     }
-    puts(s1);
+    puts(s1); // 这里不能用 printf, %%
 
     return 0;
 }

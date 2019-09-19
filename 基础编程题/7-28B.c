@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// 数学解法，无需额外内存
 int main()
 {
     int n, sum = 0;

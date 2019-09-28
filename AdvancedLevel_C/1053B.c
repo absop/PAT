@@ -1,103 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <memory.h>
 
-typedef struct _node {
+struct _node {
     int weigth;
     int nchild;
     int *child;
-} node_t;
+} v[100];
 
-typedef struct _vector {
-    int len;
-    int alloc;
-    int *data;
-} vector_t;
-
-int npath;
-node_t nodes[100];
-vector_t *paths[100];
+int N, M, S, id;
+int stack[100], top;
+const char *fmts[2] = {"%d", " %d"};
 
 #define sort(lo, hi, cmp) qsort(lo, hi - lo, sizeof lo[0], cmp)
-#define vptr(ptr) (*((vector_t**)ptr))
+#define iptr(ptr) ((int*)ptr)
 #define cvptr const void *
-int cmp(cvptr a, cvptr b)
-{
-    int i = 0, cond;
-    for (; i < vptr(a)->len && i < vptr(b)->len; ++i) {
-        cond = vptr(b)->data[i] - vptr(a)->data[i];
-        if (cond) return cond;
-    }
-    return i < vptr(a)->len ? -1 : i < vptr(b)->len ? 1 : 0;
-}
+int cmp(cvptr a, cvptr b) { return v[*iptr(b)].weigth - v[*iptr(a)].weigth; }
 
-void addnode(vector_t *v, int node)
-{
-    if (v->len >= v->alloc) {
-        v->alloc += 5;
-        v->data = realloc(v->data, v->alloc * sizeof (int));
-    }
-    v->data[v->len++] = node;
-}
 
-vector_t *copy(vector_t *v)
+void dfs(int s, int sum)
 {
-    vector_t *vv = malloc(sizeof (vector_t));
-    vv->len = v->len;
-    vv->alloc = v->alloc;
-    vv->data = malloc(vv->alloc * sizeof (int));
-    memcpy(vv->data, v->data, v->len * sizeof (int));
-    return vv;
-}
-
-void dfs(int s, vector_t *v, int sum, int S)
-{
-    addnode(v, nodes[s].weigth);
-    sum += nodes[s].weigth;
-    if (nodes[s].nchild && sum < S) {
-        for (int i = 0; i < nodes[s].nchild; ++i)
-            dfs(nodes[s].child[i], copy(v), sum, S);
-    }
-    else if (!nodes[s].nchild && sum == S)
-        paths[npath++] = v;
-    else {
-        free(v->data);
-        free(v);
+    if (v[s].nchild && sum < S)
+        for (int i = 0; i < v[s].nchild; ++i) {
+            id = v[s].child[i];
+            stack[top] = v[id].weigth;
+            dfs(id, sum + stack[top++]);
+            top--;
+        }
+    else if (!v[s].nchild && sum == S) {
+        for (int i = 0; i < top; ++i)
+            printf(fmts[!!i], stack[i]);
+        printf("\n");
     }
 }
 
 
 int main()
 {
-    int N, M, S, id;
-    const char *fmts[2] = {"%d", " %d"};
     scanf("%d %d %d", &N, &M, &S);
     for (int i = 0; i < N; ++i)
-        scanf("%d", &nodes[i].weigth);
+        scanf("%d", &v[i].weigth);
     for (int i = 0; i < M; ++i) {
         scanf("%d", &id);
-        scanf("%d", &nodes[id].nchild);
-        nodes[id].child = malloc(nodes[id].nchild * sizeof (int));
-        for (int j = 0; j < nodes[id].nchild; ++j)
-            scanf("%d", &nodes[id].child[j]);
+        scanf("%d", &v[id].nchild);
+        v[id].child = malloc(v[id].nchild * sizeof (int));
+        for (int j = 0; j < v[id].nchild; ++j)
+            scanf("%d", &v[id].child[j]);
+        sort(v[id].child, v[id].child + v[id].nchild, cmp);
     }
-    vector_t *v = calloc(sizeof (vector_t), 1);
-    dfs(0, v, 0, S);
-
-    sort(paths, paths + npath, cmp);
-    for (int i = 0; i < npath; ++i) {
-        for (int j = 0; j < paths[i]->len; ++j)
-            printf(fmts[!!j], paths[i]->data[j]);
-        printf("\n");
-    }
+    stack[top++] = v[0].weigth;
+    dfs(0, v[0].weigth);
 
     for (int i = 0; i < 100; ++i) {
-        if (nodes[i].child)
-            free(nodes[i].child);
-        if (i < npath) {
-            free(paths[i]->data);
-            free(paths[i]);
-        }
+        if (v[i].child)
+            free(v[i].child);
     }
 
     return 0;

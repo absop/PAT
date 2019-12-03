@@ -15,17 +15,16 @@ int main()
 
     for (int i = 0; i < Np; ++i)
         scanf("%d", &mouses[i].weight);
-    for (int i = 0; i < Np; ++i)
+    for (int i = 0; i < Np; ++i) {
         scanf("%d", &mouses[i].rank);
-    for (int i = 0; i < Np; ++i)
         pmouses[i] = &mouses[mouses[i].rank];
+    }
 #if 0
     printf("%d", pmouses[0]->weight);
     for (int i = 1; i < Np; ++i)
         printf(" %d", pmouses[i]->weight);
     printf("\n");
 #endif
-
     int newlen, rank, maxi, gend;
     for (int n = Np; n > 1; n = newlen) {
         newlen = ngroup(n);

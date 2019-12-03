@@ -68,11 +68,11 @@
 |1053|[`Path of Equal Weight`][README1053]       |30|[`1053.c`][1053.c],[`1053B.c`][1053B.c]|
 |1054|[`The Dominant Color`][README1054]         |20|[`1054.c`][1054.c],[`1054B.c`][1054B.c]|
 |1055|[`The World's Richest`][README1055]        |25|[`1055.c`][1055.c]|
-|1056|[`Mice and Rice`][README1056]              |25|[`1056.c`][1056.c]|
-|1057|[`Stack`][README1057]                      |30||
-|1058|[`A+B in Hogwarts`][README1058]            |20||
-|1059|[`Prime Factors`][README1059]              |25||
-|1060|[`Are They Equal`][README1060]             |25||
+|1056|[`Mice and Rice`][README1056]              |25|[`1056.c`][1056.c],[`1056.py`][1056.py]|
+|1057|[`Stack`][README1057]                      |30|[`1057.c`][1057.c]|
+|1058|[`A+B in Hogwarts`][README1058]            |20|[`1058.c`][1058.c]|
+|1059|[`Prime Factors`][README1059]              |25|[`1059.c`][1059.c]|
+|1060|[`Are They Equal`][README1060]             |25|[`1060.c`][1060.c]|
 
 
 Welcome to contribute code and star.
@@ -211,3 +211,8 @@ Welcome to contribute code and star.
 [1054B.c]: AdvancedLevel_C/1054B.c
 [1055.c]: AdvancedLevel_C/1055.c
 [1056.c]: AdvancedLevel_C/1056.c
+[1056.py]: AdvancedLevel_C/1056.py
+[1057.c]: AdvancedLevel_C/1057.c
+[1058.c]: AdvancedLevel_C/1058.c
+[1059.c]: AdvancedLevel_C/1059.c
+[1060.c]: AdvancedLevel_C/1060.c

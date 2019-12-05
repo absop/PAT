@@ -1,35 +1,20 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+// 过不了，难道除了树状数组+二分查找
+// 就没有其他方法能够全部通过这道题？
 
-#define MAXN 100010
-#define lowbit(i) ((i) & (-i))
+#define MAXN 100001
 
-int C[MAXN], stack[MAXN];
+int stack[MAXN], count[MAXN];
 
-void update(int x, int v)
+int getnth(int nth)
 {
-    for (int i = x; i < MAXN; i += lowbit(i))
-        C[i] += v;
-}
-
-int getsum(int x)
-{
-    int sum = 0;
-    for (int i = x; i >= 1; i -= lowbit(i))
-        sum += C[i];
-    return sum;
-}
-// O(logN ^ 2)
-int search(int left, int right, int k)
-{
-    while (left < right) {
-        int mid = (left + right) / 2;
-        if (getsum(mid) >= k)
-            right = mid;
-        else
-            left = mid + 1;
+    int i, cnt = 0;
+    for (i = 0; i < MAXN; ++i) {
+        cnt += count[i];
+        if (cnt >= nth)
+            return i;
     }
-    return left;
 }
 
 int main()
@@ -48,10 +33,10 @@ int main()
                 if (top > 0) {
                     if (command[1] == 'o') {
                         num = stack[--top];
-                        update(num, -1);
+                        count[num]--;
                     }
                     else
-                        num = search(1, MAXN, (top + 1) / 2);
+                        num = getnth((top + 1) / 2);
                     printf("%d\n", num);
                 }
                 else
@@ -60,7 +45,7 @@ int main()
             case 'u':
                 scanf("%d", &num);
                 stack[top++] = num;
-                update(num, 1);
+                count[num]++;
                 break;
         }
     }

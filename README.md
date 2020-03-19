@@ -73,11 +73,11 @@
 |1058|[`A+B in Hogwarts`][README1058]            |20|[`1058.c`][1058.c]|
 |1059|[`Prime Factors`][README1059]              |25|[`1059.c`][1059.c]|
 |1060|[`Are They Equal`][README1060]             |25|[`1060.c`][1060.c]|
-|1061|[`Datin`][README1061]                      |(2|[`1061.c`][1061.c]|
-|1062|[`Talent and Virtu`][README1062]           |(2|[`1062.c`][1062.c]|
-|1063|[`Set Similarit`][README1063]              |(2|[`1063.c`][1063.c],[`1063.py`][1063.py],[`1063B.c`][1063B.c]|
-|1064|[`Complete Binary Search Tre`][README1064] |(3|[`1064.c`][1064.c]|
-|1065|[`A+B and C (64bit`][README1065]           |(2||
+|1061|[`Dating`][README1061]                     |20|[`1061.c`][1061.c]|
+|1062|[`Talent and Virtue`][README1062]          |25|[`1062.c`][1062.c]|
+|1063|[`Set Similarity`][README1063]             |25|[`1063.c`][1063.c],[`1063.py`][1063.py],[`1063B.c`][1063B.c]|
+|1064|[`Complete Binary Search Tree`][README1064]|30|[`1064.c`][1064.c]|
+|1065|[`A+B and C (64bit)`][README1065]          |20||
 
 
 Welcome to contribute code and star.
@@ -143,11 +143,11 @@ Welcome to contribute code and star.
 [README1058]: AdvancedLevel_C/1058%20A+B%20in%20Hogwarts%20(20%20分).md
 [README1059]: AdvancedLevel_C/1059%20Prime%20Factors%20(25%20分).md
 [README1060]: AdvancedLevel_C/1060%20Are%20They%20Equal%20(25%20分).md
-[README1061]: AdvancedLevel_C/1061%20Dating%20(20分).md
-[README1062]: AdvancedLevel_C/1062%20Talent%20and%20Virtue%20(25分).md
-[README1063]: AdvancedLevel_C/1063%20Set%20Similarity%20(25分).md
-[README1064]: AdvancedLevel_C/1064%20Complete%20Binary%20Search%20Tree%20(30分).md
-[README1065]: AdvancedLevel_C/1065%20A+B%20and%20C%20(64bit)%20(20分).md
+[README1061]: AdvancedLevel_C/1061%20Dating%20(20%20分).md
+[README1062]: AdvancedLevel_C/1062%20Talent%20and%20Virtue%20(25%20分).md
+[README1063]: AdvancedLevel_C/1063%20Set%20Similarity%20(25%20分).md
+[README1064]: AdvancedLevel_C/1064%20Complete%20Binary%20Search%20Tree%20(30%20分).md
+[README1065]: AdvancedLevel_C/1065%20A+B%20and%20C%20(64bit)%20(20%20分).md
 [1001.c]: AdvancedLevel_C/1001.c
 [1002.c]: AdvancedLevel_C/1002.c
 [1003.c]: AdvancedLevel_C/1003.c

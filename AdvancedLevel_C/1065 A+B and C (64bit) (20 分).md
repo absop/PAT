@@ -1,4 +1,4 @@
-# 1065 A+B and C (64bit) (20分)
+# 1065 A+B and C (64bit) (20 分)
 
 Given three integers A, B and C in $[−2^63,2^63]$, you are supposed to tell whether $A+B>C$.
 

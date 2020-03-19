@@ -1,4 +1,4 @@
-# 1063 Set Similarity (25分)
+# 1063 Set Similarity (25 分)
 
 Given two sets of integers, the similarity of the sets is defined to be $N_​c/N_​t × 100%$, where $N_c$ is the number of distinct common numbers shared by the two sets, and $N_t$ is the total number of distinct numbers in the two sets. Your job is to calculate the similarity of any given pair of sets.
 

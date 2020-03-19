@@ -1,4 +1,4 @@
-# 1064 Complete Binary Search Tree (30分)
+# 1064 Complete Binary Search Tree (30 分)
 
 A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:
 
